@@ -1,0 +1,3 @@
+workbook_key,version_no,original_filename,sha256,size_bytes,declared_data_class,imported_at,imported_by,stored_path,data_class
+main,1,synthetic_workbook.xlsx,72f7ecac89f6491330c0b2617e76ff747bd69443fe06ee85bb9962965db80954,12250,synthetic,2026-11-10T03:06:49.315314+00:00,geodesic-demo,sources/workbooks/72f7ecac89f6491330c0b2617e76ff747bd69443fe06ee85bb9962965db80954.xlsx,synthetic
+main,2,synthetic_workbook.xlsx,06201270c9424e8c65e4b459ed2092e6438c54a1caf5858ece8c878e14578c7e,12239,synthetic,2026-11-10T03:06:49.504554+00:00,geodesic-demo,sources/workbooks/06201270c9424e8c65e4b459ed2092e6438c54a1caf5858ece8c878e14578c7e.xlsx,synthetic

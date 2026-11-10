@@ -1,0 +1,78 @@
+# GEODESIC project configuration: EXAMPLE
+#
+# Copy this file, edit it, and create a project with:
+#   geodesic init --project <data directory> --config <your copy> --data-class real
+#
+# The copy stored in the project directory (project.yaml) is the one the
+# application reads afterwards; after editing it run:  geodesic reload-config
+#
+# Nothing in this file is specific to a research field. Replace every
+# placeholder with your own wording.
+
+name: "My evidence project"
+
+# Top-level evidence categories ("stages"). Use the names from your own
+# workbook; any number of stages is allowed. A paper or a finding may belong to
+# several stages. 'key' is a short stable identifier (lower case, no spaces);
+# 'name' and 'definition' are shown in the dashboard and in exports.
+# 'keywords' are optional and are used only for *suggested* stage assignments.
+stages:
+  - key: stage_1
+    name: "Stage 1 (replace with your stage name)"
+    definition: ""
+    keywords: []
+  - key: stage_2
+    name: "Stage 2 (replace with your stage name)"
+    definition: ""
+    keywords: []
+  - key: stage_3
+    name: "Stage 3 (replace with your stage name)"
+    definition: ""
+    keywords: []
+  - key: stage_4
+    name: "Stage 4 (replace with your stage name)"
+    definition: ""
+    keywords: []
+
+# Names of the people who review in this installation (informational).
+reviewers: []
+
+# Deterministic narrative parser. All lists are editable.
+parser:
+  extra_qualifier_phrases: []   # additional hedging/qualifier phrases to flag, as written in your sources
+  extra_units: {}               # unit symbol -> dimension name; recognised, never converted
+  segment_on_semicolon: true
+  repeat_similarity_threshold: 0.92
+  reimport_similarity_threshold: 0.6
+  reimport_ambiguity_margin: 0.1
+
+# Duplicate detection. Candidates are only ever suggested; a reviewer decides.
+dedup:
+  weight_title: 0.7
+  weight_first_author: 0.15
+  weight_year: 0.15
+  candidate_threshold: 0.8
+  title_floor: 0.6
+  identifier_title_conflict_below: 0.35
+  max_block_size: 200
+
+# Literature search (Europe PMC is the default connector; it needs no key).
+search:
+  default_provider: europepmc
+  page_size: 100
+  max_records: 500              # retrieval limit per run; reaching it is recorded with the run
+  min_interval_seconds: 0.5     # pause between requests
+  max_retries: 4
+  backoff_seconds: 1.0
+  timeout_seconds: 30.0
+  tool_name: geodesic           # client identification sent to providers (no personal data here)
+  # Search concepts: synonyms inside a group are OR-ed, groups are AND-ed.
+  concepts: []
+  #  - label: concept_a
+  #    terms: ["first term", "second term"]
+  provider_field: {}            # e.g. {europepmc: TITLE_ABS}
+  provider_query_override: {}   # provider -> an exact source-specific query, used verbatim
+  # Small query used only by 'geodesic live-smoke' to check retrieval mechanics.
+  smoke_query: 'TITLE:"calibration"'
+  smoke_max_records: 6
+  smoke_page_size: 3

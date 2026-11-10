@@ -1,0 +1,141 @@
+{
+ "geodesicFixture": "geodesic-data-class: synthetic",
+ "version": "synthetic-fixture",
+ "hitCount": 10,
+ "nextCursorMark": "SYNCURSOR002",
+ "nextPageUrl": null,
+ "request": {
+  "queryString": "synthetic",
+  "resultType": "core",
+  "cursorMark": "SYNCURSOR001",
+  "pageSize": 4
+ },
+ "resultList": {
+  "result": [
+   {
+    "id": "90000005",
+    "source": "MED",
+    "title": "A review of inert tracer methods for engineered reservoirs",
+    "authorString": "Quillon B.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Quillon B"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2020",
+    "pubTypeList": {
+     "pubType": [
+      "review",
+      "journal article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 3,
+    "doi": "10.5555/geodesic.synth.105",
+    "pmid": "90000005",
+    "abstractText": "This review summarises inert tracer methods used in engineered reservoirs and tanks."
+   },
+   {
+    "id": "90000006",
+    "source": "MED",
+    "title": "Tracer washout from a stirred tank",
+    "authorString": "Rowntree E, Sable F.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Rowntree E"
+      },
+      {
+       "fullName": "Sable F"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2012",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.106",
+    "pmid": "90000006",
+    "abstractText": "Washout of a dye tracer from a stirred tank was followed for 12 h."
+   },
+   {
+    "id": "90000007",
+    "source": "MED",
+    "title": "Reactive tracer decay in a weir pool",
+    "authorString": "Thackeray G.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Thackeray G"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2021",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.107",
+    "pmid": "90000007",
+    "abstractText": "Decay of a reactive tracer was followed in a weir pool downstream of a holding reservoir."
+   },
+   {
+    "id": "90000008",
+    "source": "MED",
+    "title": "Thermal stratification of a storage pond",
+    "authorString": "Ullswater H.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Ullswater H"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2018",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.101",
+    "pmid": "90000008",
+    "abstractText": "Temperature profiles of a storage pond were logged over one season."
+   }
+  ]
+ }
+}

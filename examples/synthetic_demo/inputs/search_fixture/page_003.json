@@ -1,0 +1,76 @@
+{
+ "geodesicFixture": "geodesic-data-class: synthetic",
+ "version": "synthetic-fixture",
+ "hitCount": 10,
+ "nextCursorMark": "SYNCURSOR003",
+ "nextPageUrl": null,
+ "request": {
+  "queryString": "synthetic",
+  "resultType": "core",
+  "cursorMark": "SYNCURSOR002",
+  "pageSize": 4
+ },
+ "resultList": {
+  "result": [
+   {
+    "id": "90000009",
+    "source": "MED",
+    "title": "Numerical study of conduit flow between tanks",
+    "authorString": "Varley I.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Varley I"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2023",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.109",
+    "pmid": "90000009",
+    "abstractText": "Purely computational study of conduit flow between tanks; no tracer measurements were made."
+   },
+   {
+    "id": "90000010",
+    "source": "MED",
+    "title": "Sediment sampling protocol",
+    "authorString": "Wexcombe J.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Wexcombe J"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2022",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.110",
+    "pmid": "90000010"
+   }
+  ]
+ }
+}

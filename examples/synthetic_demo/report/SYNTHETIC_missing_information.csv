@@ -1,0 +1,56 @@
+stage_key,stage,field,population,findings,recorded,not_reported,not_applicable,not_yet_extracted,could_not_be_parsed,no_status_recorded,data_class
+(all stages),(all stages),outcome,measurement findings,23,9,0,0,14,0,0,synthetic
+(all stages),(all stages),system_context,measurement findings,23,20,0,0,0,0,3,synthetic
+(all stages),(all stages),experimental_context,measurement findings,23,0,0,0,0,0,23,synthetic
+(all stages),(all stages),measurement_method,measurement findings,23,0,0,0,0,0,23,synthetic
+(all stages),(all stages),observation_type,measurement findings,23,0,0,0,23,0,0,synthetic
+(all stages),(all stages),unit_original,"measurement findings stating a number, range or bound",23,23,0,0,0,0,0,synthetic
+(all stages),(all stages),timepoint,measurement findings,23,9,0,0,14,0,0,synthetic
+(all stages),(all stages),sample_size,measurement findings,23,5,0,0,18,0,0,synthetic
+(all stages),(all stages),uncertainty,"measurement findings stating a number, range or bound",23,6,0,0,17,0,0,synthetic
+(all stages),(all stages),denominator,measurement findings,23,0,0,0,0,0,23,synthetic
+(all stages),(all stages),reference_definition,measurement findings stating a relative quantity,11,9,0,0,0,0,2,synthetic
+release,Release,outcome,measurement findings,9,5,0,0,4,0,0,synthetic
+release,Release,system_context,measurement findings,9,7,0,0,0,0,2,synthetic
+release,Release,experimental_context,measurement findings,9,0,0,0,0,0,9,synthetic
+release,Release,measurement_method,measurement findings,9,0,0,0,0,0,9,synthetic
+release,Release,observation_type,measurement findings,9,0,0,0,9,0,0,synthetic
+release,Release,unit_original,"measurement findings stating a number, range or bound",9,9,0,0,0,0,0,synthetic
+release,Release,timepoint,measurement findings,9,4,0,0,5,0,0,synthetic
+release,Release,sample_size,measurement findings,9,1,0,0,8,0,0,synthetic
+release,Release,uncertainty,"measurement findings stating a number, range or bound",9,3,0,0,6,0,0,synthetic
+release,Release,denominator,measurement findings,9,0,0,0,0,0,9,synthetic
+release,Release,reference_definition,measurement findings stating a relative quantity,4,4,0,0,0,0,0,synthetic
+transit,Transit,outcome,measurement findings,6,3,0,0,3,0,0,synthetic
+transit,Transit,system_context,measurement findings,6,4,0,0,0,0,2,synthetic
+transit,Transit,experimental_context,measurement findings,6,0,0,0,0,0,6,synthetic
+transit,Transit,measurement_method,measurement findings,6,0,0,0,0,0,6,synthetic
+transit,Transit,observation_type,measurement findings,6,0,0,0,6,0,0,synthetic
+transit,Transit,unit_original,"measurement findings stating a number, range or bound",6,6,0,0,0,0,0,synthetic
+transit,Transit,timepoint,measurement findings,6,2,0,0,4,0,0,synthetic
+transit,Transit,sample_size,measurement findings,6,2,0,0,4,0,0,synthetic
+transit,Transit,uncertainty,"measurement findings stating a number, range or bound",6,2,0,0,4,0,0,synthetic
+transit,Transit,denominator,measurement findings,6,0,0,0,0,0,6,synthetic
+transit,Transit,reference_definition,measurement findings stating a relative quantity,3,2,0,0,0,0,1,synthetic
+retention,Retention,outcome,measurement findings,4,1,0,0,3,0,0,synthetic
+retention,Retention,system_context,measurement findings,4,4,0,0,0,0,0,synthetic
+retention,Retention,experimental_context,measurement findings,4,0,0,0,0,0,4,synthetic
+retention,Retention,measurement_method,measurement findings,4,0,0,0,0,0,4,synthetic
+retention,Retention,observation_type,measurement findings,4,0,0,0,4,0,0,synthetic
+retention,Retention,unit_original,"measurement findings stating a number, range or bound",4,4,0,0,0,0,0,synthetic
+retention,Retention,timepoint,measurement findings,4,1,0,0,3,0,0,synthetic
+retention,Retention,sample_size,measurement findings,4,1,0,0,3,0,0,synthetic
+retention,Retention,uncertainty,"measurement findings stating a number, range or bound",4,0,0,0,4,0,0,synthetic
+retention,Retention,denominator,measurement findings,4,0,0,0,0,0,4,synthetic
+retention,Retention,reference_definition,measurement findings stating a relative quantity,3,2,0,0,0,0,1,synthetic
+discharge,Discharge,outcome,measurement findings,5,1,0,0,4,0,0,synthetic
+discharge,Discharge,system_context,measurement findings,5,5,0,0,0,0,0,synthetic
+discharge,Discharge,experimental_context,measurement findings,5,0,0,0,0,0,5,synthetic
+discharge,Discharge,measurement_method,measurement findings,5,0,0,0,0,0,5,synthetic
+discharge,Discharge,observation_type,measurement findings,5,0,0,0,5,0,0,synthetic
+discharge,Discharge,unit_original,"measurement findings stating a number, range or bound",5,5,0,0,0,0,0,synthetic
+discharge,Discharge,timepoint,measurement findings,5,2,0,0,3,0,0,synthetic
+discharge,Discharge,sample_size,measurement findings,5,1,0,0,4,0,0,synthetic
+discharge,Discharge,uncertainty,"measurement findings stating a number, range or bound",5,1,0,0,4,0,0,synthetic
+discharge,Discharge,denominator,measurement findings,5,0,0,0,0,0,5,synthetic
+discharge,Discharge,reference_definition,measurement findings stating a relative quantity,1,1,0,0,0,0,0,synthetic

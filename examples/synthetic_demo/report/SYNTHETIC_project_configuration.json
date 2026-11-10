@@ -1,0 +1,258 @@
+{
+ "project": {
+  "id": "prj_eebe29670fdc486b9fb4",
+  "name": "Synthetic tracer example",
+  "data_class": "synthetic"
+ },
+ "app_version": "0.1.0",
+ "project_config": {
+  "name": "Synthetic tracer example",
+  "stages": [
+   {
+    "key": "release",
+    "name": "Release",
+    "definition": "Tracer leaving the source tank.",
+    "keywords": []
+   },
+   {
+    "key": "transit",
+    "name": "Transit",
+    "definition": "Tracer moving through conduits between reservoirs.",
+    "keywords": []
+   },
+   {
+    "key": "retention",
+    "name": "Retention",
+    "definition": "Tracer held in holding reservoirs or on surfaces.",
+    "keywords": []
+   },
+   {
+    "key": "discharge",
+    "name": "Discharge",
+    "definition": "Tracer leaving the system through the outflow.",
+    "keywords": []
+   }
+  ],
+  "reviewers": [
+   "Synthetic Reviewer A",
+   "Synthetic Reviewer B"
+  ],
+  "parser": {
+   "extra_qualifier_phrases": [],
+   "extra_units": {},
+   "segment_on_semicolon": true,
+   "repeat_similarity_threshold": 0.92,
+   "reimport_similarity_threshold": 0.6,
+   "reimport_ambiguity_margin": 0.1
+  },
+  "dedup": {
+   "weight_title": 0.7,
+   "weight_first_author": 0.15,
+   "weight_year": 0.15,
+   "candidate_threshold": 0.8,
+   "title_floor": 0.6,
+   "identifier_title_conflict_below": 0.35,
+   "max_block_size": 200
+  },
+  "search": {
+   "default_provider": "europepmc",
+   "page_size": 100,
+   "max_records": 500,
+   "min_interval_seconds": 0.5,
+   "max_retries": 4,
+   "backoff_seconds": 1.0,
+   "timeout_seconds": 30.0,
+   "tool_name": "geodesic",
+   "concepts": [
+    {
+     "label": "tracer",
+     "terms": [
+      "inert tracer",
+      "dye tracer",
+      "tracer"
+     ]
+    },
+    {
+     "label": "system",
+     "terms": [
+      "reservoir",
+      "tank",
+      "conduit"
+     ]
+    }
+   ],
+   "provider_field": {},
+   "provider_query_override": {},
+   "smoke_query": "TITLE:\"calibration\"",
+   "smoke_max_records": 6,
+   "smoke_page_size": 3
+  }
+ },
+ "protocol": {
+  "version": 2,
+  "status": "confirmed",
+  "content_sha256": "a6c3d97e7f3022f36c6b40a30e2cf7d2e48bea86560c717ad035411e2e7a01d2",
+  "content": {
+   "research_question": "SYNTHETIC EXAMPLE: how does an inert tracer move among the engineered reservoirs of a test rig (release, transit, retention, discharge)?",
+   "target_systems": [
+    "engineered reservoir test rigs"
+   ],
+   "interventions": [
+    "inert tracer dosing"
+   ],
+   "comparators": [
+    "undosed baseline run"
+   ],
+   "outcomes": [
+    "tracer concentration",
+    "released fraction",
+    "retained fraction",
+    "clearance rate"
+   ],
+   "measurement_types": [
+    "direct concentration measurement",
+    "optical proxy signal"
+   ],
+   "study_designs": [
+    "bench experiment",
+    "pilot-rig experiment"
+   ],
+   "date_limits": {
+    "from_year": 2015,
+    "to_year": null
+   },
+   "languages": [],
+   "publication_types": {
+    "conference_abstracts": {
+     "treatment": "flag_for_review",
+     "note": "synthetic example",
+     "type_terms": [
+      "conference abstract",
+      "conference paper"
+     ]
+    },
+    "other": {
+     "treatment": "flag_for_review",
+     "note": "synthetic example",
+     "type_terms": []
+    },
+    "preprints": {
+     "treatment": "flag_for_review",
+     "note": "synthetic example",
+     "type_terms": [
+      "preprint"
+     ]
+    },
+    "reviews": {
+     "treatment": "exclude",
+     "note": "synthetic example: used for background only",
+     "type_terms": [
+      "review"
+     ]
+    }
+   },
+   "inclusion_criteria": [
+    {
+     "id": "I1",
+     "text": "Reports an experiment on an engineered reservoir rig.",
+     "applies_to": [
+      "title_abstract",
+      "full_text"
+     ],
+     "match_terms": [
+      "reservoir",
+      "tank",
+      "conduit",
+      "weir"
+     ]
+    },
+    {
+     "id": "I2",
+     "text": "Uses an inert tracer.",
+     "applies_to": [
+      "title_abstract",
+      "full_text"
+     ],
+     "match_terms": [
+      "tracer",
+      "dye"
+     ]
+    },
+    {
+     "id": "I3",
+     "text": "Reports at least one measured quantity for a stage.",
+     "applies_to": [
+      "full_text"
+     ],
+     "match_terms": []
+    }
+   ],
+   "exclusion_criteria": [
+    {
+     "id": "E1",
+     "text": "Purely computational study with no rig measurement.",
+     "applies_to": [
+      "title_abstract",
+      "full_text"
+     ],
+     "match_terms": [
+      "simulation only",
+      "purely computational"
+     ]
+    },
+    {
+     "id": "E2",
+     "text": "Tracer is reactive rather than inert.",
+     "applies_to": [
+      "title_abstract",
+      "full_text"
+     ],
+     "match_terms": [
+      "reactive tracer"
+     ]
+    }
+   ],
+   "supporting_evidence_role": "SYNTHETIC EXAMPLE: results from natural (non-engineered) reservoirs are kept as supporting context only and are not compared with rig measurements.",
+   "automation": {
+    "full_text": {
+     "authorized": false,
+     "allowed_rules": []
+    },
+    "title_abstract": {
+     "authorized": true,
+     "allowed_rules": [
+      "publication_type",
+      "date_limit"
+     ]
+    }
+   },
+   "notes": "Synthetic example protocol bundled with GEODESIC for tests and the offline demonstration."
+  }
+ },
+ "vocabulary": [
+  {
+   "field": "system_context",
+   "original_term": "Lined source tank",
+   "normalized_term": "Source tank",
+   "note": "simulated review action of the offline demonstration"
+  },
+  {
+   "field": "system_context",
+   "original_term": "Stirred source tank, 200 L",
+   "normalized_term": "Source tank",
+   "note": "simulated review action of the offline demonstration"
+  }
+ ],
+ "workbook_mappings": [
+  {
+   "import_run_id": "imp_17096c1d890e4203a54b",
+   "mapping_sha256": "29fb5303656f4c8075faa3086adfbad5cf61fe08aa389109c475ead024f63659",
+   "mapping_json": "{\"generated_from\":{\"note\":\"bundled mapping for the synthetic fixture workbook\"},\"mapping_version\":1,\"sheets\":[{\"columns\":[],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":null,\"header_row\":null,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"ignore\",\"sheet\":\"README\",\"stage\":{\"confirmed\":false,\"inferred_by\":null,\"mode\":\"none\",\"separator\":\";\",\"stage_keys\":[],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Release\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"release\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Transit\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"transit\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Retention\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"retention\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Discharge\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"discharge\"],\"value_map\":{}}},{\"columns\":[],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":null,\"header_row\":null,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"summary\",\"sheet\":\"Summary\",\"stage\":{\"confirmed\":false,\"inferred_by\":null,\"mode\":\"none\",\"separator\":\";\",\"stage_keys\":[],\"value_map\":{}}}],\"summary_counts\":[{\"cell\":\"B2\",\"confirmed\":true,\"label\":\"Release rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"release\"},{\"cell\":\"C2\",\"confirmed\":true,\"label\":\"Release papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"release\"},{\"cell\":\"B3\",\"confirmed\":true,\"label\":\"Transit rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"transit\"},{\"cell\":\"C3\",\"confirmed\":true,\"label\":\"Transit papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"transit\"},{\"cell\":\"B4\",\"confirmed\":true,\"label\":\"Retention rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"retention\"},{\"cell\":\"C4\",\"confirmed\":true,\"label\":\"Retention papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"retention\"},{\"cell\":\"B5\",\"confirmed\":true,\"label\":\"Discharge rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"discharge\"},{\"cell\":\"C5\",\"confirmed\":true,\"label\":\"Discharge papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"discharge\"},{\"cell\":\"B6\",\"confirmed\":true,\"label\":\"Total rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":null},{\"cell\":\"C6\",\"confirmed\":true,\"label\":\"Total papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":null}],\"workbook_key\":\"main\"}"
+  },
+  {
+   "import_run_id": "imp_1bccdb202a2a4231a9bc",
+   "mapping_sha256": "29fb5303656f4c8075faa3086adfbad5cf61fe08aa389109c475ead024f63659",
+   "mapping_json": "{\"generated_from\":{\"note\":\"bundled mapping for the synthetic fixture workbook\"},\"mapping_version\":1,\"sheets\":[{\"columns\":[],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":null,\"header_row\":null,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"ignore\",\"sheet\":\"README\",\"stage\":{\"confirmed\":false,\"inferred_by\":null,\"mode\":\"none\",\"separator\":\";\",\"stage_keys\":[],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Release\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"release\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Transit\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"transit\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Retention\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"retention\"],\"value_map\":{}}},{\"columns\":[{\"column\":\"A\",\"confirmed\":true,\"header\":\"Reference\",\"inferred_by\":null,\"note\":null,\"role\":\"paper_reference\"},{\"column\":\"B\",\"confirmed\":true,\"header\":\"DOI\",\"inferred_by\":null,\"note\":null,\"role\":\"doi\"},{\"column\":\"C\",\"confirmed\":true,\"header\":\"System\",\"inferred_by\":null,\"note\":null,\"role\":\"system_context\"},{\"column\":\"D\",\"confirmed\":true,\"header\":\"Key findings\",\"inferred_by\":null,\"note\":null,\"role\":\"narrative_findings\"},{\"column\":\"E\",\"confirmed\":true,\"header\":\"Measured value\",\"inferred_by\":null,\"note\":null,\"role\":\"measurements\"},{\"column\":\"F\",\"confirmed\":true,\"header\":\"Limitations\",\"inferred_by\":null,\"note\":null,\"role\":\"limitations\"},{\"column\":\"G\",\"confirmed\":true,\"header\":\"Reviewer notes\",\"inferred_by\":null,\"note\":null,\"role\":\"unmapped\"},{\"column\":\"H\",\"confirmed\":true,\"header\":\"Year\",\"inferred_by\":null,\"note\":null,\"role\":\"year\"}],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":4,\"header_row\":3,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"evidence\",\"sheet\":\"Discharge\",\"stage\":{\"confirmed\":true,\"inferred_by\":null,\"mode\":\"fixed\",\"separator\":\";\",\"stage_keys\":[\"discharge\"],\"value_map\":{}}},{\"columns\":[],\"confirmed\":true,\"data_end_row\":null,\"data_start_row\":null,\"header_row\":null,\"inferred_by\":null,\"merged_cells\":\"fill_down\",\"role\":\"summary\",\"sheet\":\"Summary\",\"stage\":{\"confirmed\":false,\"inferred_by\":null,\"mode\":\"none\",\"separator\":\";\",\"stage_keys\":[],\"value_map\":{}}}],\"summary_counts\":[{\"cell\":\"B2\",\"confirmed\":true,\"label\":\"Release rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"release\"},{\"cell\":\"C2\",\"confirmed\":true,\"label\":\"Release papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"release\"},{\"cell\":\"B3\",\"confirmed\":true,\"label\":\"Transit rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"transit\"},{\"cell\":\"C3\",\"confirmed\":true,\"label\":\"Transit papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"transit\"},{\"cell\":\"B4\",\"confirmed\":true,\"label\":\"Retention rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"retention\"},{\"cell\":\"C4\",\"confirmed\":true,\"label\":\"Retention papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"retention\"},{\"cell\":\"B5\",\"confirmed\":true,\"label\":\"Discharge rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":\"discharge\"},{\"cell\":\"C5\",\"confirmed\":true,\"label\":\"Discharge papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":\"discharge\"},{\"cell\":\"B6\",\"confirmed\":true,\"label\":\"Total rows\",\"measures\":\"evidence_rows\",\"sheet\":\"Summary\",\"stage_key\":null},{\"cell\":\"C6\",\"confirmed\":true,\"label\":\"Total papers\",\"measures\":\"distinct_papers\",\"sheet\":\"Summary\",\"stage_key\":null}],\"workbook_key\":\"main\"}"
+  }
+ ]
+}

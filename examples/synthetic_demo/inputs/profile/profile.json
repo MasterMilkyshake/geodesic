@@ -1,0 +1,837 @@
+{
+ "profile_version": 1,
+ "generated_at": "2026-11-10T03:06:49.233388+00:00",
+ "geodesic_version": "0.1.0",
+ "file_name": "synthetic_workbook.xlsx",
+ "sha256": "72f7ecac89f6491330c0b2617e76ff747bd69443fe06ee85bb9962965db80954",
+ "size_bytes": 12250,
+ "embedded_synthetic_tag": "synthetic",
+ "sheet_count": 6,
+ "sheets": [
+  {
+   "sheet": "README",
+   "hidden": false,
+   "used_rows": 2,
+   "used_columns": 1,
+   "non_empty_cells": 2,
+   "header_row_detected": null,
+   "header_row_candidates": [],
+   "data_start_row_detected": null,
+   "data_rows_with_content": 0,
+   "merged_ranges": 0,
+   "merged_range_examples": [],
+   "hyperlinks": 0,
+   "comments": 0,
+   "formula_cells": 0,
+   "fill_colors": [],
+   "font_flags_in_data_rows": {
+    "bold": 1
+   },
+   "columns": [
+    {
+     "column": "A",
+     "header": null,
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 146,
+     "mean_text_length": 103.5,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  },
+  {
+   "sheet": "Release",
+   "hidden": false,
+   "used_rows": 8,
+   "used_columns": 8,
+   "non_empty_cells": 29,
+   "header_row_detected": 3,
+   "header_row_candidates": [
+    {
+     "row": 3,
+     "text_cells": 8,
+     "non_empty_cells": 8,
+     "cells_in_next_row": 8
+    },
+    {
+     "row": 4,
+     "text_cells": 5,
+     "non_empty_cells": 8,
+     "cells_in_next_row": 4
+    },
+    {
+     "row": 7,
+     "text_cells": 3,
+     "non_empty_cells": 3,
+     "cells_in_next_row": 1
+    }
+   ],
+   "data_start_row_detected": 4,
+   "data_rows_with_content": 5,
+   "merged_ranges": 2,
+   "merged_range_examples": [
+    "A4:A5",
+    "B4:B5"
+   ],
+   "hyperlinks": 0,
+   "comments": 1,
+   "formula_cells": 0,
+   "fill_colors": [
+    {
+     "color": "00D9D9D9",
+     "cells": 8,
+     "columns": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "rows": "3-3",
+     "header_cells": 8
+    },
+    {
+     "color": "00FFFF00",
+     "cells": 1,
+     "columns": [
+      "E"
+     ],
+     "rows": "6-6",
+     "header_cells": 0
+    }
+   ],
+   "font_flags_in_data_rows": {},
+   "columns": [
+    {
+     "column": "A",
+     "header": "Reference",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 134,
+     "mean_text_length": 90.3,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 1
+    },
+    {
+     "column": "B",
+     "header": "DOI",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 26,
+     "mean_text_length": 26.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 1,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 1
+    },
+    {
+     "column": "C",
+     "header": "System",
+     "non_empty_cells": 4,
+     "value_types": {
+      "str": 4
+     },
+     "max_text_length": 26,
+     "mean_text_length": 19.8,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "D",
+     "header": "Key findings",
+     "non_empty_cells": 5,
+     "value_types": {
+      "str": 5
+     },
+     "max_text_length": 142,
+     "mean_text_length": 71.8,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 4,
+     "hyperlinks": 0,
+     "comments": 1,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "E",
+     "header": "Measured value",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 20,
+     "mean_text_length": 15.5,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "F",
+     "header": "Limitations",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 40,
+     "mean_text_length": 32.5,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "G",
+     "header": "Reviewer notes",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 13,
+     "mean_text_length": 13.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "H",
+     "header": "Year",
+     "non_empty_cells": 2,
+     "value_types": {
+      "number": 2
+     },
+     "max_text_length": 4,
+     "mean_text_length": 4.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  },
+  {
+   "sheet": "Transit",
+   "hidden": false,
+   "used_rows": 7,
+   "used_columns": 8,
+   "non_empty_cells": 29,
+   "header_row_detected": 3,
+   "header_row_candidates": [
+    {
+     "row": 3,
+     "text_cells": 8,
+     "non_empty_cells": 8,
+     "cells_in_next_row": 5
+    },
+    {
+     "row": 6,
+     "text_cells": 5,
+     "non_empty_cells": 6,
+     "cells_in_next_row": 4
+    },
+    {
+     "row": 4,
+     "text_cells": 3,
+     "non_empty_cells": 5,
+     "cells_in_next_row": 5
+    }
+   ],
+   "data_start_row_detected": 4,
+   "data_rows_with_content": 4,
+   "merged_ranges": 0,
+   "merged_range_examples": [],
+   "hyperlinks": 1,
+   "comments": 0,
+   "formula_cells": 0,
+   "fill_colors": [
+    {
+     "color": "00D9D9D9",
+     "cells": 8,
+     "columns": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "rows": "3-3",
+     "header_cells": 8
+    }
+   ],
+   "font_flags_in_data_rows": {},
+   "columns": [
+    {
+     "column": "A",
+     "header": "Reference",
+     "non_empty_cells": 4,
+     "value_types": {
+      "str": 4
+     },
+     "max_text_length": 134,
+     "mean_text_length": 95.2,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 4,
+     "hyperlinks": 1,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "B",
+     "header": "DOI",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 26,
+     "mean_text_length": 18.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "C",
+     "header": "System",
+     "non_empty_cells": 4,
+     "value_types": {
+      "str": 4
+     },
+     "max_text_length": 14,
+     "mean_text_length": 12.2,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "D",
+     "header": "Key findings",
+     "non_empty_cells": 4,
+     "value_types": {
+      "str": 4
+     },
+     "max_text_length": 102,
+     "mean_text_length": 77.2,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 4,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "E",
+     "header": "Measured value",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 38,
+     "mean_text_length": 22.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "F",
+     "header": "Limitations",
+     "non_empty_cells": 0,
+     "value_types": {},
+     "max_text_length": 0,
+     "mean_text_length": 0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "G",
+     "header": "Reviewer notes",
+     "non_empty_cells": 0,
+     "value_types": {},
+     "max_text_length": 0,
+     "mean_text_length": 0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "H",
+     "header": "Year",
+     "non_empty_cells": 4,
+     "value_types": {
+      "number": 4
+     },
+     "max_text_length": 4,
+     "mean_text_length": 4.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 4,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  },
+  {
+   "sheet": "Retention",
+   "hidden": false,
+   "used_rows": 6,
+   "used_columns": 8,
+   "non_empty_cells": 23,
+   "header_row_detected": 3,
+   "header_row_candidates": [
+    {
+     "row": 3,
+     "text_cells": 8,
+     "non_empty_cells": 8,
+     "cells_in_next_row": 7
+    },
+    {
+     "row": 5,
+     "text_cells": 4,
+     "non_empty_cells": 5,
+     "cells_in_next_row": 4
+    },
+    {
+     "row": 6,
+     "text_cells": 2,
+     "non_empty_cells": 2,
+     "cells_in_next_row": 0
+    }
+   ],
+   "data_start_row_detected": 4,
+   "data_rows_with_content": 3,
+   "merged_ranges": 2,
+   "merged_range_examples": [
+    "A5:A6",
+    "B5:B6"
+   ],
+   "hyperlinks": 0,
+   "comments": 0,
+   "formula_cells": 0,
+   "fill_colors": [
+    {
+     "color": "00D9D9D9",
+     "cells": 8,
+     "columns": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "rows": "3-3",
+     "header_cells": 8
+    },
+    {
+     "color": "00FFC7CE",
+     "cells": 1,
+     "columns": [
+      "E"
+     ],
+     "rows": "4-4",
+     "header_cells": 0
+    }
+   ],
+   "font_flags_in_data_rows": {},
+   "columns": [
+    {
+     "column": "A",
+     "header": "Reference",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 112,
+     "mean_text_length": 87.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 1
+    },
+    {
+     "column": "B",
+     "header": "DOI",
+     "non_empty_cells": 2,
+     "value_types": {
+      "str": 2
+     },
+     "max_text_length": 42,
+     "mean_text_length": 34.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 1
+    },
+    {
+     "column": "C",
+     "header": "System",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 19,
+     "mean_text_length": 13.7,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "D",
+     "header": "Key findings",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 113,
+     "mean_text_length": 63.7,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "E",
+     "header": "Measured value",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 12,
+     "mean_text_length": 12.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 1,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "F",
+     "header": "Limitations",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 42,
+     "mean_text_length": 42.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "G",
+     "header": "Reviewer notes",
+     "non_empty_cells": 0,
+     "value_types": {},
+     "max_text_length": 0,
+     "mean_text_length": 0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "H",
+     "header": "Year",
+     "non_empty_cells": 2,
+     "value_types": {
+      "number": 2
+     },
+     "max_text_length": 4,
+     "mean_text_length": 4.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  },
+  {
+   "sheet": "Discharge",
+   "hidden": false,
+   "used_rows": 6,
+   "used_columns": 8,
+   "non_empty_cells": 22,
+   "header_row_detected": 3,
+   "header_row_candidates": [
+    {
+     "row": 3,
+     "text_cells": 8,
+     "non_empty_cells": 8,
+     "cells_in_next_row": 6
+    },
+    {
+     "row": 6,
+     "text_cells": 3,
+     "non_empty_cells": 3,
+     "cells_in_next_row": 0
+    }
+   ],
+   "data_start_row_detected": 4,
+   "data_rows_with_content": 3,
+   "merged_ranges": 0,
+   "merged_range_examples": [],
+   "hyperlinks": 0,
+   "comments": 0,
+   "formula_cells": 0,
+   "fill_colors": [
+    {
+     "color": "00D9D9D9",
+     "cells": 8,
+     "columns": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "rows": "3-3",
+     "header_cells": 8
+    }
+   ],
+   "font_flags_in_data_rows": {},
+   "columns": [
+    {
+     "column": "A",
+     "header": "Reference",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 134,
+     "mean_text_length": 91.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "B",
+     "header": "DOI",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 30,
+     "mean_text_length": 30.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 1,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "C",
+     "header": "System",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 12,
+     "mean_text_length": 12.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "D",
+     "header": "Key findings",
+     "non_empty_cells": 3,
+     "value_types": {
+      "str": 3
+     },
+     "max_text_length": 104,
+     "mean_text_length": 74.3,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 3,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "E",
+     "header": "Measured value",
+     "non_empty_cells": 1,
+     "value_types": {
+      "str": 1
+     },
+     "max_text_length": 7,
+     "mean_text_length": 7.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 1,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "F",
+     "header": "Limitations",
+     "non_empty_cells": 0,
+     "value_types": {},
+     "max_text_length": 0,
+     "mean_text_length": 0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "G",
+     "header": "Reviewer notes",
+     "non_empty_cells": 0,
+     "value_types": {},
+     "max_text_length": 0,
+     "mean_text_length": 0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "H",
+     "header": "Year",
+     "non_empty_cells": 2,
+     "value_types": {
+      "number": 2
+     },
+     "max_text_length": 4,
+     "mean_text_length": 4.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 2,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  },
+  {
+   "sheet": "Summary",
+   "hidden": false,
+   "used_rows": 8,
+   "used_columns": 3,
+   "non_empty_cells": 19,
+   "header_row_detected": 1,
+   "header_row_candidates": [
+    {
+     "row": 1,
+     "text_cells": 3,
+     "non_empty_cells": 3,
+     "cells_in_next_row": 3
+    }
+   ],
+   "data_start_row_detected": 2,
+   "data_rows_with_content": 6,
+   "merged_ranges": 0,
+   "merged_range_examples": [],
+   "hyperlinks": 0,
+   "comments": 0,
+   "formula_cells": 1,
+   "fill_colors": [],
+   "font_flags_in_data_rows": {},
+   "columns": [
+    {
+     "column": "A",
+     "header": "Stage",
+     "non_empty_cells": 6,
+     "value_types": {
+      "str": 6
+     },
+     "max_text_length": 9,
+     "mean_text_length": 7.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 0,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "B",
+     "header": "Rows",
+     "non_empty_cells": 5,
+     "value_types": {
+      "number": 5
+     },
+     "max_text_length": 2,
+     "mean_text_length": 1.2,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 5,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    },
+    {
+     "column": "C",
+     "header": "Papers",
+     "non_empty_cells": 5,
+     "value_types": {
+      "number": 5
+     },
+     "max_text_length": 1,
+     "mean_text_length": 1.0,
+     "multi_line_cells": 0,
+     "cells_containing_digits": 5,
+     "hyperlinks": 0,
+     "comments": 0,
+     "cells_covered_by_merges": 0
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Header rows and column roles are detected heuristically and must be confirmed in the mapping file.",
+  "Formatting (fill colours, fonts) is reported as found. GEODESIC does not interpret its meaning."
+ ]
+}

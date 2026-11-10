@@ -1,0 +1,6 @@
+stage_key,stage,quantitative_findings,with_unit,absolute_quantities,with_timepoint,with_uncertainty,with_sample_size,verified,quantitative_candidates,assigned_to_experiment,time_series_candidates,data_class
+(all stages),(all stages),23,23,12,9,6,5,4,1,2,0,synthetic
+release,Release,9,9,5,4,3,1,3,1,2,0,synthetic
+transit,Transit,6,6,3,2,2,2,2,0,1,0,synthetic
+retention,Retention,4,4,1,1,0,1,0,0,0,0,synthetic
+discharge,Discharge,5,5,4,2,1,1,0,0,0,0,synthetic

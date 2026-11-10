@@ -1,0 +1,20 @@
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Local working data. Real project data must never be committed.
+# Real projects are refused inside a version-controlled tree by the application as well.
+.geodesic-demo/
+.geodesic-scale/
+geodesic-data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+local.yaml
+credentials.env
+.env

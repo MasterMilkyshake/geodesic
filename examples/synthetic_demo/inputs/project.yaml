@@ -1,0 +1,61 @@
+name: Synthetic tracer example
+stages:
+- key: release
+  name: Release
+  definition: Tracer leaving the source tank.
+  keywords: []
+- key: transit
+  name: Transit
+  definition: Tracer moving through conduits between reservoirs.
+  keywords: []
+- key: retention
+  name: Retention
+  definition: Tracer held in holding reservoirs or on surfaces.
+  keywords: []
+- key: discharge
+  name: Discharge
+  definition: Tracer leaving the system through the outflow.
+  keywords: []
+reviewers:
+- Synthetic Reviewer A
+- Synthetic Reviewer B
+parser:
+  extra_qualifier_phrases: []
+  extra_units: {}
+  segment_on_semicolon: true
+  repeat_similarity_threshold: 0.92
+  reimport_similarity_threshold: 0.6
+  reimport_ambiguity_margin: 0.1
+dedup:
+  weight_title: 0.7
+  weight_first_author: 0.15
+  weight_year: 0.15
+  candidate_threshold: 0.8
+  title_floor: 0.6
+  identifier_title_conflict_below: 0.35
+  max_block_size: 200
+search:
+  default_provider: europepmc
+  page_size: 100
+  max_records: 500
+  min_interval_seconds: 0.5
+  max_retries: 4
+  backoff_seconds: 1.0
+  timeout_seconds: 30.0
+  tool_name: geodesic
+  concepts:
+  - label: tracer
+    terms:
+    - inert tracer
+    - dye tracer
+    - tracer
+  - label: system
+    terms:
+    - reservoir
+    - tank
+    - conduit
+  provider_field: {}
+  provider_query_override: {}
+  smoke_query: TITLE:"calibration"
+  smoke_max_records: 6
+  smoke_page_size: 3

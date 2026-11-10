@@ -1,0 +1,3 @@
+assessment_id,paper_id,dimension,value,rationale,reviewer,decider_kind,protocol_version,created_at,is_current,data_class
+pas_0cb13bdc7add4293887d,pap_30e091f260604cb1b277,primary_relevance,direct,simulated review action of the offline demonstration,Simulated Reviewer 1,simulated,2,2026-11-10T03:06:49.472595+00:00,1,synthetic
+pas_3ac578d0e19e44808481,pap_30e091f260604cb1b277,mathematical_modeling,limited,simulated review action of the offline demonstration,Simulated Reviewer 1,simulated,2,2026-11-10T03:06:49.472744+00:00,1,synthetic

@@ -1,0 +1,14 @@
+stage_key,stage,column,column_kind,original_terms,findings,reports,independent_units_at_most,verified,quantitative,quantitative_candidates,data_class
+release,Release,Measured value,term,Measured value,2,2,2,1,2,1,synthetic
+release,Release,release rate constant,term,release rate constant,1,1,1,1,1,0,synthetic
+release,Release,tracer concentration,term,tracer concentration,1,1,1,0,1,0,synthetic
+release,Release,tracer released,term,tracer released,1,1,1,1,1,0,synthetic
+release,Release,(not recorded),not_recorded,,9,4,9,0,4,0,synthetic
+transit,Transit,Measured value,term,Measured value,2,2,2,0,1,0,synthetic
+transit,Transit,release rate constant,term,release rate constant,1,1,1,1,1,0,synthetic
+transit,Transit,transit time,term,transit time,1,1,1,1,1,0,synthetic
+transit,Transit,(not recorded),not_recorded,,5,3,5,0,3,0,synthetic
+retention,Retention,Measured value,term,Measured value,1,1,1,0,1,0,synthetic
+retention,Retention,(not recorded),not_recorded,,6,2,6,0,3,0,synthetic
+discharge,Discharge,Measured value,term,Measured value,1,1,1,0,1,0,synthetic
+discharge,Discharge,(not recorded),not_recorded,,5,3,5,0,4,0,synthetic

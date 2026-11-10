@@ -1,0 +1,14 @@
+# GEODESIC local (per-machine) settings: EXAMPLE
+#
+# Copy to <project directory>/local.yaml (untracked; never exported), or to
+# ~/.config/geodesic/config.yaml for all projects. Environment variables
+# GEODESIC_REVIEWER and GEODESIC_CONTACT_EMAIL take priority over this file.
+
+# Your name as it should appear on review actions and in the audit trail.
+reviewer: "Your Name"
+
+# Contact address sent to providers that ask for one (Crossref "polite" use,
+# Europe PMC e-mail parameter). It is sent with live requests only and is
+# masked in logs, stored request descriptions and raw-response archives.
+# The address below is a placeholder on a reserved example domain.
+contact_email: "you@example.org"

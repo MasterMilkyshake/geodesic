@@ -1,0 +1,2 @@
+study_id,label,description,design,reports,record_status,created_at,created_by,data_class
+std_26f7a358d6d449cb8b36,Synthetic stirred-tank study,,,pap_30e091f260604cb1b277,active,2026-11-10T03:06:49.469670+00:00,Simulated Reviewer 1,synthetic

@@ -1,0 +1,15 @@
+run_id,run_at,finding_id,severity,code,field,message,data_class
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_188acdbf05ab4310bc36,warning,relative_without_reference,reference_definition,Relative quantity (arbitrary_units) without a recorded reference definition; it cannot be compared with other values.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_6d63308c4ac44f68a5b1,warning,relative_without_reference,reference_definition,Relative quantity (unspecified_relative) without a recorded reference definition; it cannot be compared with other values.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_ba58235f474940c49e3d,info,open_ambiguity_flags,,Unresolved parser flags: from_to_may_be_change_not_range.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_de543fad73d24311b743,info,open_ambiguity_flags,,Unresolved parser flags: multiple_quantities_in_segment.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_2288e11f637f43438303,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_d0683334f49d472cbf85,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_ca1cbffff6814caf9edc,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_6bab96ed8ed64d07a5b4,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_9731386ded4e423b8dcc,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_dde2a045fdc3419fada0,info,paper_unresolved,,The cited paper is not resolved to a record with a valid identifier.,synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_4a40862350654341a310,info,uncertainty_type_unspecified,uncertainty_type,"The source gives '±' without saying what it is (SD, SE, CI ...).",synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_1ede328f69f2441e98e4,info,uncertainty_type_unspecified,uncertainty_type,"The source gives '±' without saying what it is (SD, SE, CI ...).",synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_de543fad73d24311b743,info,uncertainty_type_unspecified,uncertainty_type,"The source gives '±' without saying what it is (SD, SE, CI ...).",synthetic
+val_b6029d5d5fb1434ba631,2026-11-10T03:06:49.472824+00:00,fnd_6bab96ed8ed64d07a5b4,info,unparsed_content,,The parser could not read this content; it needs manual extraction.,synthetic

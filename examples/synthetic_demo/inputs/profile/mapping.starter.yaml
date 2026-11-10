@@ -1,0 +1,325 @@
+# GEODESIC workbook mapping
+#
+# This file tells the importer where things are in your workbook. Entries marked
+# `confirmed: false` were INFERRED by the profiler from header text only. They
+# are guesses. Check each one against the workbook, correct it, then set
+# `confirmed: true`. The importer refuses to run while any required entry is
+# unconfirmed.
+#
+# Sheet roles:   evidence | summary | ignore
+# Column roles:  paper_reference | doi | pmid | url | title | authors | year | journal | stage | narrative_findings | measurements | limitations | system_context | experimental_context | intervention | comparator | outcome | measurement_method | timepoint | unmapped
+#   paper_reference     citation text for the paper the row is about
+#   narrative_findings  free text that may hold several facts per cell
+#   measurements        cells that each hold one measurement (value and unit)
+#   limitations         caveats and limits on interpretation
+#   unmapped            kept cell-by-cell and as an unknown field of the row; not interpreted
+# Stage modes:   fixed (whole sheet = stage_keys) | column (a `stage` column names it) | none
+# summary_counts: cells holding counts that the importer reconciles against what it imported
+#   measures: evidence_rows | distinct_papers ; stage_key: a project stage key, or null for the whole workbook
+#   example:
+#     - sheet: Summary
+#       cell: B2
+#       measures: evidence_rows
+#       stage_key: <stage key>
+#       confirmed: true
+
+mapping_version: 1
+workbook_key: main
+generated_from:
+  file_name: synthetic_workbook.xlsx
+  sha256: 72f7ecac89f6491330c0b2617e76ff747bd69443fe06ee85bb9962965db80954
+  profiled_at: '2026-11-10T03:06:49.233388+00:00'
+sheets:
+- sheet: README
+  role: ignore
+  confirmed: false
+  inferred_by: no header row with a paper-reference column was detected
+  header_row: null
+  data_start_row: null
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: none
+    stage_keys: []
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: no stage information detected
+  columns: []
+- sheet: Release
+  role: evidence
+  confirmed: false
+  inferred_by: a header row was detected and a column header suggests paper references
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - release
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: sheet name resembles project stage 'release'
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: false
+    inferred_by: header contains 'reference'
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: false
+    inferred_by: header contains 'doi'
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: false
+    inferred_by: header contains 'system'
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'finding'
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: false
+    inferred_by: header contains 'measured'
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: false
+    inferred_by: header contains 'limitation'
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'notes'
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: false
+    inferred_by: header contains 'year'
+    note: null
+- sheet: Transit
+  role: evidence
+  confirmed: false
+  inferred_by: a header row was detected and a column header suggests paper references
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - transit
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: sheet name resembles project stage 'transit'
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: false
+    inferred_by: header contains 'reference'
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: false
+    inferred_by: header contains 'doi'
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: false
+    inferred_by: header contains 'system'
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'finding'
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: false
+    inferred_by: header contains 'measured'
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: false
+    inferred_by: header contains 'limitation'
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'notes'
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: false
+    inferred_by: header contains 'year'
+    note: null
+- sheet: Retention
+  role: evidence
+  confirmed: false
+  inferred_by: a header row was detected and a column header suggests paper references
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - retention
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: sheet name resembles project stage 'retention'
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: false
+    inferred_by: header contains 'reference'
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: false
+    inferred_by: header contains 'doi'
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: false
+    inferred_by: header contains 'system'
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'finding'
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: false
+    inferred_by: header contains 'measured'
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: false
+    inferred_by: header contains 'limitation'
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'notes'
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: false
+    inferred_by: header contains 'year'
+    note: null
+- sheet: Discharge
+  role: evidence
+  confirmed: false
+  inferred_by: a header row was detected and a column header suggests paper references
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - discharge
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: sheet name resembles project stage 'discharge'
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: false
+    inferred_by: header contains 'reference'
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: false
+    inferred_by: header contains 'doi'
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: false
+    inferred_by: header contains 'system'
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'finding'
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: false
+    inferred_by: header contains 'measured'
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: false
+    inferred_by: header contains 'limitation'
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: narrative_findings
+    confirmed: false
+    inferred_by: header contains 'notes'
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: false
+    inferred_by: header contains 'year'
+    note: null
+- sheet: Summary
+  role: summary
+  confirmed: false
+  inferred_by: sheet name suggests a summary; add summary_counts entries if it holds counts
+  header_row: null
+  data_start_row: null
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: none
+    stage_keys: []
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: no stage information detected
+  columns: []
+summary_counts: []

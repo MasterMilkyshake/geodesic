@@ -1,0 +1,5 @@
+stage_key,name,definition,active,n_papers,n_findings,data_class
+release,Release,Tracer leaving the source tank.,TRUE,4,14,synthetic
+transit,Transit,Tracer moving through conduits between reservoirs.,TRUE,3,9,synthetic
+retention,Retention,Tracer held in holding reservoirs or on surfaces.,TRUE,2,7,synthetic
+discharge,Discharge,Tracer leaving the system through the outflow.,TRUE,3,6,synthetic

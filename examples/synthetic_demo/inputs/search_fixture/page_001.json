@@ -1,0 +1,158 @@
+{
+ "geodesicFixture": "geodesic-data-class: synthetic",
+ "version": "synthetic-fixture",
+ "hitCount": 10,
+ "nextCursorMark": "SYNCURSOR001",
+ "nextPageUrl": null,
+ "request": {
+  "queryString": "synthetic",
+  "resultType": "core",
+  "cursorMark": "*",
+  "pageSize": 4
+ },
+ "resultList": {
+  "result": [
+   {
+    "id": "90000001",
+    "source": "MED",
+    "title": "Tracer release from a stirred source tank",
+    "authorString": "Arden Q, Belmont T.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Arden Q"
+      },
+      {
+       "fullName": "Belmont T"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2019",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.001",
+    "pmid": "90000001",
+    "abstractText": "Release of an inert tracer from a stirred source tank into a conduit was measured."
+   },
+   {
+    "id": "90000002",
+    "source": "MED",
+    "title": "Dye pulse dispersion in a baffled conduit",
+    "authorString": "Norcross V, Oakes W.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Norcross V"
+      },
+      {
+       "fullName": "Oakes W"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2022",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "Y",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.101",
+    "pmid": "90000002",
+    "pmcid": "PMC9000002",
+    "license": "cc by",
+    "abstractText": "A dye tracer pulse was injected into a baffled conduit linking two reservoirs. Transit time and dispersion were measured at three flow rates.",
+    "fullTextUrlList": {
+     "fullTextUrl": [
+      {
+       "availability": "Open access",
+       "documentStyle": "html",
+       "site": "Europe_PMC",
+       "url": "https://example.invalid/synthetic/PMC9000002"
+      }
+     ]
+    }
+   },
+   {
+    "id": "SYN000003",
+    "source": "PPR",
+    "title": "Dye pulse dispersion in a baffled conduit",
+    "authorString": "Norcross V, Oakes W.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Norcross V"
+      },
+      {
+       "fullName": "Oakes W"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Synthetic Preprint Server"
+     }
+    },
+    "pubYear": "2021",
+    "pubTypeList": {
+     "pubType": [
+      "preprint"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "doi": "10.5555/geodesic.synth.preprint.101",
+    "abstractText": "A dye tracer pulse was injected into a baffled conduit linking two reservoirs. Transit time and dispersion were measured at three flow rates."
+   },
+   {
+    "id": "SYN000004",
+    "source": "AGR",
+    "title": "Dye-pulse dispersion in a baffled conduit.",
+    "authorString": "Norcross V, Oakes W.",
+    "authorList": {
+     "author": [
+      {
+       "fullName": "Norcross V"
+      },
+      {
+       "fullName": "Oakes W"
+      }
+     ]
+    },
+    "journalInfo": {
+     "journal": {
+      "title": "Journal of Synthetic Hydraulics"
+     }
+    },
+    "pubYear": "2022",
+    "pubTypeList": {
+     "pubType": [
+      "research-article"
+     ]
+    },
+    "isOpenAccess": "N",
+    "language": "eng",
+    "citedByCount": 0,
+    "abstractText": "A dye tracer pulse was injected into a baffled conduit linking two reservoirs. Transit time and dispersion were measured at three flow rates."
+   }
+  ]
+ }
+}

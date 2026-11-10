@@ -1,0 +1,2 @@
+experiment_id,paper_id,study_id,label,description,system_context,design,comparison_groups,findings,record_status,created_at,created_by,data_class
+exp_90574c6fc94147b39bd0,pap_30e091f260604cb1b277,std_26f7a358d6d449cb8b36,Synthetic run series 1,,,,,2,active,2026-11-10T03:06:49.469869+00:00,Simulated Reviewer 1,synthetic

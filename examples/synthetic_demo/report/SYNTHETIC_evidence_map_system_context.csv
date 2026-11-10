@@ -1,0 +1,11 @@
+stage_key,stage,column,column_kind,original_terms,findings,reports,independent_units_at_most,verified,quantitative,quantitative_candidates,data_class
+release,Release,Source tank,mapped,"Lined source tank; Stirred source tank, 200 L",10,2,10,1,6,1,synthetic
+release,Release,Pilot tank,term,Pilot tank,1,1,1,0,0,0,synthetic
+release,Release,Secondary tank,term,Secondary tank,1,1,1,0,1,0,synthetic
+release,Release,(not recorded),not_recorded,,2,1,1,2,2,0,synthetic
+transit,Transit,Main conduit,term,Main conduit,4,2,4,0,3,0,synthetic
+transit,Transit,Mixing loop,term,Mixing loop,3,1,3,0,1,0,synthetic
+transit,Transit,(not recorded),not_recorded,,2,2,2,2,2,0,synthetic
+retention,Retention,Holding reservoir A,term,Holding reservoir A,5,1,5,0,3,0,synthetic
+retention,Retention,Bypass line,term,Bypass line,2,1,2,0,1,0,synthetic
+discharge,Discharge,Outflow weir,term,Outflow weir,6,3,6,0,5,0,synthetic

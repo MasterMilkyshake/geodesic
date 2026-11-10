@@ -1,0 +1,103 @@
+GEODESIC offline demonstration - SYNTHETIC DATA: generated fixtures, not research evidence.
+Review actions below are SIMULATED and recorded as simulated; no network is used.
+
+[ 1] Generate synthetic input files
+     written to <demo directory>/inputs: a fixture workbook in two versions, fixture search responses, a fixture RIS export, a fixture PDF, a project configuration and a protocol file
+
+[ 2] Create a project declared synthetic
+     <demo directory>/project  (data class: synthetic; stages from the configuration: Release, Transit, Retention, Discharge)
+
+[ 3] Profile the workbook and write a starter mapping
+     profile and starter mapping written to <demo directory>/inputs/profile; every inferred entry is marked unconfirmed
+     importing with the unconfirmed starter mapping is refused: The importer will not run: 42 required mapping entries are unconfirmed. Check each against the workbook, correct it if needed, and set `confirmed: true`:
+
+[ 4] Import the workbook through a confirmed mapping
+     (the bundled confirmed mapping of the fixture stands in for the researcher's review of the starter mapping - simulated)
+     Workbook 'main' version 1 (synthetic_workbook.xlsx, sha256 72f7ecac89f64913…, synthetic)
+       cells read:                 125
+       evidence rows:              14  Release: 4, Transit: 4, Retention: 3, Discharge: 3
+       papers referenced:          8  (created 8, matched 0, resolved 6, unresolved 2, absent from this version 0)
+       invalid identifiers:        1;  metadata conflicts: 1
+       findings in workbook:       32  (limitation: 5, measurement: 20, narrative: 7)
+       by statement type:          approximate: 3, bound: 4, exact: 9, qualitative: 11, range: 4, unparsed: 1
+       change classification:      added 32, unchanged 0, modified 0, absent 0, restored 0, ambiguous identity 0
+       reviews marked stale:       0
+       unparsed content:           3  ambiguous_decimal_comma: 1, no_quantity_in_measurement_cell: 1, row_without_paper_reference: 1
+       parse failures:             0
+       requiring review:           drafts 1, flagged 17, unsupported 0, stale 0, unresolved papers 2
+       possible repeated findings: 1 candidate pair(s)
+       reconciliation with workbook summary counts:
+         Summary!B2 evidence_rows [release]: workbook says 4, imported 4 -> MATCH
+         Summary!C2 distinct_papers [release]: workbook says 3, imported 3 -> MATCH
+         Summary!B3 evidence_rows [transit]: workbook says 4, imported 4 -> MATCH
+         Summary!C3 distinct_papers [transit]: workbook says 4, imported 4 -> MATCH
+         Summary!B4 evidence_rows [retention]: workbook says 4, imported 3 -> MISMATCH
+         Summary!C4 distinct_papers [retention]: workbook says 2, imported 2 -> MATCH
+         Summary!B5 evidence_rows [discharge]: workbook says 3, imported 3 -> MATCH
+         Summary!C5 distinct_papers [discharge]: workbook says 3, imported 3 -> MATCH
+         Summary!B6 evidence_rows [whole workbook]: workbook says 15, imported 14 -> MISMATCH
+         Summary!C6 distinct_papers [whole workbook]: workbook says 8, imported 8 -> MATCH
+
+[ 5] Load a protocol; it is provisional until confirmed
+     protocol v2 (PROVISIONAL)
+
+[ 6] Exploratory literature search under the provisional protocol (fixture responses, not live)
+     run srn_e903480620544a608f7f: europepmc · FIXTURE (synthetic responses) · complete · retrieved 10 of 10 reported · exploratory (protocol provisional)
+     a final eligibility decision is refused while the protocol is provisional: Eligibility decisions cannot be finalised while the protocol is provisional (v2 (PROVISIONAL)). Confirm the protocol first, or record the decision as 
+
+[ 7] Confirm the protocol (simulated reviewer)
+     protocol v2 (confirmed)
+
+[ 8] Import a search-result file (RIS fixture)
+     4 records read; new paper: 4, exact duplicate record: 0, validated identifier match: 0; note: record 4 has no ER tag; it was read up to the next record or end of file
+
+[ 9] Detect duplicates; group identifier matches; leave the rest for review
+     (detection also runs when records arrive; this run) identifier matches: 3, auto grouped: 0, identifier conflicts: 0, candidates identifier: 0, candidates similarity: 0, pairs scored: 6, blocks skipped too large: 0
+     identifier matches confirmed by the simulated reviewer: confirmed: 1, left_for_review: 1
+     7 duplicate candidate(s) still await a reviewer
+
+[10] Title/abstract screening: suggestions, automated rule, two simulated reviewers
+     suggestions (drafts, never decisions): 21 created - include: 3, exclude: 4, uncertain: 14
+     automated exclusions the confirmed protocol authorises: 2 applied (2 suggestion(s) rest on rules it does not authorise and stay open)
+     8 paper(s) decided by Simulated Reviewer 1; 2 also by Simulated Reviewer 2; disagreements awaiting adjudication: 1
+
+[11] Obtain full text: a user-provided PDF and an open-access XML (fixture response, not live)
+     PDF  doc_2ba9a830d5284a24b4d2: ok, 3 page(s) of text
+     XML  doc_9f38570b63164e19a5c9: ok, 12 section unit(s), 1 table(s), license: https://creativecommons.org/licenses/by/4.0/
+
+[12] Detect candidate values; promote two; extract one by hand; dismiss one
+     snapshot snp_c5abad3bcf3548d1ab88: 11 candidate values (7 with a unit), 0 parse failures - candidates are not findings
+     snapshot snp_b701218f1956415db5a7: 16 candidate values (8 with a unit), 0 parse failures - candidates are not findings
+     new unreviewed findings: fnd_1ede328f69f2441e98e4 (promoted, PDF page), fnd_de543fad73d24311b743 (promoted, XML section), fnd_b8610435ab1f423ab9b3 (manual); each is anchored to its stored source text
+
+[13] Review: verify against the source, correct, relate (simulated reviewers)
+     5 findings verified by Simulated Reviewer 2; 1 corrected (new version, earlier version kept); 2 related as dependent
+
+[14] Organise: study, experiment, stage assignment, term grouping
+     1 study, 1 experiment with 2 findings; 1 finding now belongs to two stages; 2 original terms grouped under 'Source tank' (the stored terms are unchanged)
+
+[15] Normalise a value with the explicit unit table; compare without pooling
+     normalised value drv_c1a8f9d6fac2430d8710: 12.5 µg/mL by rule unit_conversion:mg/L->µg/mL (stored beside the original, which is unchanged)
+     comparison set cmp_d772ce493fba4a3ab17d: quantitative_candidate, cautions: system_context, uncertainty, sample_size, independence; 2 findings form at most 2 independent unit(s)
+     the two findings of one experiment count as 1 independent unit, not two
+
+[16] Validate
+     run val_b6029d5d5fb1434ba631: 35 findings checked, 14 issue(s) - error: 0, warning: 2, info: 12
+     Validation checks traceability and internal consistency only; it does not verify that findings represent their sources correctly.
+
+[17] Import a changed version of the workbook (the first version stays preserved)
+     workbook version 2: added 1, unchanged 29, modified 2, absent 1, restored 0
+     reviews marked stale because their source changed: 1; derived values marked stale: 0
+
+[18] Write the report directory (HTML report, figures, tables, manifest)
+     40 files in <demo directory>/report; every file name starts with SYNTHETIC_
+
+[19] Check the audit trail
+     72 audit events, hash chain intact; by actor kind: automated: 6, simulated: 43, system: 23
+     project now holds 21 paper records, 35 findings, 2 documents, 2 search runs
+     title/abstract decisions - human: 0, automated: 2, simulated: 10
+
+Demo finished. Everything above happened in a SYNTHETIC project; review actions were simulated and are recorded as such.
+Project directory: <demo directory>/project
+Report:            <demo directory>/report/SYNTHETIC_report.html
+Look at it in the dashboard:  geodesic dashboard --project <demo directory>/project

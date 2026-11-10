@@ -1,0 +1,383 @@
+# GEODESIC workbook mapping
+#
+# This file tells the importer where things are in your workbook. Entries marked
+# `confirmed: false` were INFERRED by the profiler from header text only. They
+# are guesses. Check each one against the workbook, correct it, then set
+# `confirmed: true`. The importer refuses to run while any required entry is
+# unconfirmed.
+#
+# Sheet roles:   evidence | summary | ignore
+# Column roles:  paper_reference | doi | pmid | url | title | authors | year | journal | stage | narrative_findings | measurements | limitations | system_context | experimental_context | intervention | comparator | outcome | measurement_method | timepoint | unmapped
+#   paper_reference     citation text for the paper the row is about
+#   narrative_findings  free text that may hold several facts per cell
+#   measurements        cells that each hold one measurement (value and unit)
+#   limitations         caveats and limits on interpretation
+#   unmapped            kept cell-by-cell and as an unknown field of the row; not interpreted
+# Stage modes:   fixed (whole sheet = stage_keys) | column (a `stage` column names it) | none
+# summary_counts: cells holding counts that the importer reconciles against what it imported
+#   measures: evidence_rows | distinct_papers ; stage_key: a project stage key, or null for the whole workbook
+#   example:
+#     - sheet: Summary
+#       cell: B2
+#       measures: evidence_rows
+#       stage_key: <stage key>
+#       confirmed: true
+
+mapping_version: 1
+workbook_key: main
+generated_from:
+  note: bundled mapping for the synthetic fixture workbook
+sheets:
+- sheet: README
+  role: ignore
+  confirmed: true
+  inferred_by: null
+  header_row: null
+  data_start_row: null
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: none
+    stage_keys: []
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: null
+  columns: []
+- sheet: Release
+  role: evidence
+  confirmed: true
+  inferred_by: null
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - release
+    value_map: {}
+    separator: ;
+    confirmed: true
+    inferred_by: null
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: unmapped
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: true
+    inferred_by: null
+    note: null
+- sheet: Transit
+  role: evidence
+  confirmed: true
+  inferred_by: null
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - transit
+    value_map: {}
+    separator: ;
+    confirmed: true
+    inferred_by: null
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: unmapped
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: true
+    inferred_by: null
+    note: null
+- sheet: Retention
+  role: evidence
+  confirmed: true
+  inferred_by: null
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - retention
+    value_map: {}
+    separator: ;
+    confirmed: true
+    inferred_by: null
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: unmapped
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: true
+    inferred_by: null
+    note: null
+- sheet: Discharge
+  role: evidence
+  confirmed: true
+  inferred_by: null
+  header_row: 3
+  data_start_row: 4
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: fixed
+    stage_keys:
+    - discharge
+    value_map: {}
+    separator: ;
+    confirmed: true
+    inferred_by: null
+  columns:
+  - column: A
+    header: Reference
+    role: paper_reference
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: B
+    header: DOI
+    role: doi
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: C
+    header: System
+    role: system_context
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: D
+    header: Key findings
+    role: narrative_findings
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: E
+    header: Measured value
+    role: measurements
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: F
+    header: Limitations
+    role: limitations
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: G
+    header: Reviewer notes
+    role: unmapped
+    confirmed: true
+    inferred_by: null
+    note: null
+  - column: H
+    header: Year
+    role: year
+    confirmed: true
+    inferred_by: null
+    note: null
+- sheet: Summary
+  role: summary
+  confirmed: true
+  inferred_by: null
+  header_row: null
+  data_start_row: null
+  data_end_row: null
+  merged_cells: fill_down
+  stage:
+    mode: none
+    stage_keys: []
+    value_map: {}
+    separator: ;
+    confirmed: false
+    inferred_by: null
+  columns: []
+summary_counts:
+- sheet: Summary
+  cell: B2
+  measures: evidence_rows
+  stage_key: release
+  label: Release rows
+  confirmed: true
+- sheet: Summary
+  cell: C2
+  measures: distinct_papers
+  stage_key: release
+  label: Release papers
+  confirmed: true
+- sheet: Summary
+  cell: B3
+  measures: evidence_rows
+  stage_key: transit
+  label: Transit rows
+  confirmed: true
+- sheet: Summary
+  cell: C3
+  measures: distinct_papers
+  stage_key: transit
+  label: Transit papers
+  confirmed: true
+- sheet: Summary
+  cell: B4
+  measures: evidence_rows
+  stage_key: retention
+  label: Retention rows
+  confirmed: true
+- sheet: Summary
+  cell: C4
+  measures: distinct_papers
+  stage_key: retention
+  label: Retention papers
+  confirmed: true
+- sheet: Summary
+  cell: B5
+  measures: evidence_rows
+  stage_key: discharge
+  label: Discharge rows
+  confirmed: true
+- sheet: Summary
+  cell: C5
+  measures: distinct_papers
+  stage_key: discharge
+  label: Discharge papers
+  confirmed: true
+- sheet: Summary
+  cell: B6
+  measures: evidence_rows
+  stage_key: null
+  label: Total rows
+  confirmed: true
+- sheet: Summary
+  cell: C6
+  measures: distinct_papers
+  stage_key: null
+  label: Total papers
+  confirmed: true

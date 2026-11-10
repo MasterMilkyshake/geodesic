@@ -1,0 +1,35 @@
+TY  - JOUR
+N1  - geodesic-data-class: synthetic
+TI  - Dye pulse dispersion in a baffled conduit
+AU  - Norcross, V.
+AU  - Oakes, W.
+PY  - 2022/03/14/
+JO  - Journal of Synthetic Hydraulics
+DO  - https://doi.org/10.5555/GEODESIC.SYNTH.101
+AB  - A dye tracer pulse was injected into a baffled conduit linking two reservoirs.
+  Transit time and dispersion were measured at three flow rates.
+UR  - https://example.invalid/synthetic/ris/101
+LA  - eng
+ER  -
+
+TY  - CONF
+TI  - Holding reservoir retention of an inert tracer: a conference summary
+AU  - Ingleby, K.
+AU  - Jarrow, M.
+PY  - 2022
+T2  - Proceedings of the Synthetic Flow Conference
+AN  - PMID: 90000042
+ER  -
+
+TY  - RPRT
+TI  - Outflow tracer sampling at a discharge weir
+A1  - Yarrow, L.
+Y1  - 2019//
+DO  - 10.5555/not a doi
+ZZ  - an unknown tag is kept with the stored record
+ER  -
+
+TY  - JOUR
+TI  - A record without the end-of-record tag
+AU  - Zennor, M.
+PY  - 2020

@@ -1,0 +1,322 @@
+{
+ "label": "SYNTHETIC DATA: generated test fixture, not research evidence",
+ "requested": {
+  "papers": 10000,
+  "findings": 100000
+ },
+ "environment": {
+  "python": "3.12.16",
+  "sqlite": "3.53.1",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "cpu_count": 10
+ },
+ "generated": {
+  "search": {
+   "records": 10040,
+   "pages": 101,
+   "repeated_same_doi": 20,
+   "repeated_near_title_no_identifier": 20
+  },
+  "workbook": {
+   "rows": 40000,
+   "narrative_statements": 40000,
+   "value_cells": 40000,
+   "limitations": 20000,
+   "papers_referenced": 6000,
+   "statements": 100000
+  }
+ },
+ "observed": {
+  "paper_records": 14028,
+  "paper_records_grouped_under_a_canonical_record": 0,
+  "findings": 104004,
+  "search_records_retrieved": 10040,
+  "identifier_validation": {
+   "looked_up": 2000,
+   "validated": 2000,
+   "not_found": 0,
+   "possible_misassignment": 0
+  },
+  "search_links": {
+   "new_paper": 8028,
+   "exact_duplicate_record": 0,
+   "validated_identifier_match": 2012
+  },
+  "duplicate_detection_after_search": {
+   "identifier_matches": 4008,
+   "auto_grouped": 0,
+   "identifier_conflicts": 0,
+   "candidates_identifier": 4008,
+   "candidates_similarity": 34,
+   "pairs_scored": 310530,
+   "blocks_skipped_too_large": 36
+  },
+  "duplicate_detection_repeat": {
+   "identifier_matches": 4008,
+   "auto_grouped": 0,
+   "identifier_conflicts": 0,
+   "candidates_identifier": 0,
+   "candidates_similarity": 0,
+   "pairs_scored": 323507,
+   "blocks_skipped_too_large": 36
+  },
+  "identifier_matches_confirmed": {
+   "confirmed": 0,
+   "left_for_review": 4008
+  },
+  "duplicate_candidates_awaiting_review": 4046,
+  "workbook_reconciliation": {
+   "cells_read": 260056,
+   "evidence_rows": 40000,
+   "papers": {
+    "referenced": 6000,
+    "created": 6000,
+    "matched": 0,
+    "rematched_by_citation_similarity": 0,
+    "restored": 0,
+    "absent_from_latest": 0,
+    "resolved": 6000,
+    "unresolved": 0,
+    "invalid_identifiers": 0,
+    "metadata_conflicts": 0
+   },
+   "findings": {
+    "in_workbook": 104004,
+    "by_kind": {
+     "measurement": 80000,
+     "limitation": 24004
+    },
+    "by_statement_type": {
+     "exact": 80000,
+     "qualitative": 24004
+    },
+    "added": 104004,
+    "unchanged": 0,
+    "modified": 0,
+    "absent": 0,
+    "restored": 0,
+    "ambiguous_identity": 0
+   },
+   "unparsed_content": {
+    "total": 0,
+    "by_reason": {}
+   },
+   "parse_failures": 0
+  },
+  "screening_suggestions": {
+   "papers_considered": 14028,
+   "created": 14028,
+   "by_suggestion": {
+    "include": 1122,
+    "exclude": 9943,
+    "uncertain": 2963
+   }
+  },
+  "screening_queue_total": 14028,
+  "simulated_screening_decisions": 500,
+  "simulated_verifications": 200,
+  "fts_matches_clearance": 4979,
+  "stage_filter_matches": 20000,
+  "paper_matches_weir": 776,
+  "evidence_map_columns": {
+   "system_context": 13,
+   "outcome": 2
+  },
+  "missing_information_rows": 55,
+  "validation": {
+   "n_findings": 104004,
+   "n_issues": 13252,
+   "by_severity": {
+    "error": 0,
+    "warning": 13252,
+    "info": 0
+   }
+  },
+  "export_rows": {
+   "papers": 14028,
+   "findings": 104004,
+   "source_locations": 288008,
+   "stages": 4,
+   "finding_relations": 48011,
+   "unparsed_content": 0,
+   "workbook_versions": 1,
+   "documents": 0,
+   "search_runs": 1,
+   "screening_decisions": 500,
+   "paper_assessments": 0,
+   "studies": 0,
+   "experiments": 0,
+   "derived_values": 0,
+   "vocabulary_terms": 0,
+   "validation_issues": 13252,
+   "comparison_sets": 0,
+   "evidence_map_system_context": 52,
+   "evidence_map_outcome": 8,
+   "missing_information": 55,
+   "modeling_inventory": 5,
+   "search_screening_flow": 41
+  },
+  "audit_chain_ok": true,
+  "audit_events": 4716,
+  "database_bytes": 697675776
+ },
+ "timings": [
+  {
+   "step": "generate synthetic paper records",
+   "seconds": 0.039
+  },
+  {
+   "step": "write synthetic search response pages",
+   "seconds": 0.118
+  },
+  {
+   "step": "write synthetic workbook",
+   "seconds": 2.177
+  },
+  {
+   "step": "create project",
+   "seconds": 0.013
+  },
+  {
+   "step": "import workbook (40000 evidence rows) through the mapping",
+   "seconds": 56.238
+  },
+  {
+   "step": "validate 2000 workbook DOIs against synthetic registry-shaped responses",
+   "seconds": 3.336
+  },
+  {
+   "step": "import 10040 search records (101 fixture pages) incl. duplicate detection",
+   "seconds": 12.583
+  },
+  {
+   "step": "duplicate detection over all paper records (repeat run)",
+   "seconds": 7.551
+  },
+  {
+   "step": "confirm identifier matches with near-identical titles (simulated reviewer)",
+   "seconds": 0.012
+  },
+  {
+   "step": "duplicate candidates awaiting review, first page",
+   "seconds": 0.002
+  },
+  {
+   "step": "save and confirm the synthetic example protocol (simulated reviewer)",
+   "seconds": 0.001
+  },
+  {
+   "step": "title/abstract screening suggestions for all papers",
+   "seconds": 0.648
+  },
+  {
+   "step": "screening queue, first page",
+   "seconds": 0.006
+  },
+  {
+   "step": "screening queue restricted to the search run, first page",
+   "seconds": 0.067
+  },
+  {
+   "step": "500 simulated title/abstract decisions",
+   "seconds": 0.078
+  },
+  {
+   "step": "search and screening flow summary",
+   "seconds": 0.047
+  },
+  {
+   "step": "search and screening flow table and figure",
+   "seconds": 1.6
+  },
+  {
+   "step": "project counts (overview)",
+   "seconds": 0.263
+  },
+  {
+   "step": "full-text search of findings ('clearance'), first page",
+   "seconds": 0.025
+  },
+  {
+   "step": "filter findings by stage and quantitative, first page",
+   "seconds": 0.162
+  },
+  {
+   "step": "all findings ordered by paper, page 1,000 of 50",
+   "seconds": 1.484
+  },
+  {
+   "step": "full-text search of papers ('weir'), first page",
+   "seconds": 0.006
+  },
+  {
+   "step": "papers of the search run with findings, first page",
+   "seconds": 0.102
+  },
+  {
+   "step": "open one finding with its source locations",
+   "seconds": 0.0
+  },
+  {
+   "step": "200 simulated verifications of findings against stored source text",
+   "seconds": 0.035
+  },
+  {
+   "step": "evidence map (stage by system/context)",
+   "seconds": 0.885
+  },
+  {
+   "step": "evidence map (stage by outcome)",
+   "seconds": 0.747
+  },
+  {
+   "step": "evidence map figure (SVG)",
+   "seconds": 1.009
+  },
+  {
+   "step": "missing-information summary",
+   "seconds": 1.405
+  },
+  {
+   "step": "modelling inventory",
+   "seconds": 0.458
+  },
+  {
+   "step": "validation run",
+   "seconds": 6.497
+  },
+  {
+   "step": "export all tables (CSV, JSON)",
+   "seconds": 32.868
+  },
+  {
+   "step": "verify audit hash chain",
+   "seconds": 0.031
+  }
+ ],
+ "total_seconds": 130.493,
+ "dashboard_timings": [
+  {
+   "step": "dashboard: first render (Overview)",
+   "seconds": 1.4
+  },
+  {
+   "step": "dashboard: render page '5 Screening'",
+   "seconds": 0.328
+  },
+  {
+   "step": "dashboard: render page '8 Review findings'",
+   "seconds": 0.514
+  },
+  {
+   "step": "dashboard: render page '11 Evidence maps'",
+   "seconds": 4.899
+  },
+  {
+   "step": "dashboard: render page 'Audit trail'",
+   "seconds": 0.268
+  }
+ ]
+}

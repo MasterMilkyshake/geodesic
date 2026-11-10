@@ -1,0 +1,47 @@
+section,item,count,data_class
+identification,"search runs, mode file_import",1,synthetic
+identification,"search runs, mode fixture",1,synthetic
+identification,"records retrieved, mode file_import",4,synthetic
+identification,"records retrieved, mode fixture",10,synthetic
+identification,search runs truncated or incomplete,0,synthetic
+identification,paper records,22,synthetic
+identification,"paper records, origin file_import",4,synthetic
+identification,"paper records, origin search",10,synthetic
+identification,"paper records, origin workbook",8,synthetic
+identification,grouped as duplicates of another record,1,synthetic
+identification,distinct records after grouping,21,synthetic
+identification,duplicate candidates awaiting review,4,synthetic
+title_abstract,records eligible for this stage,21,synthetic
+title_abstract,with a current decision,10,synthetic
+title_abstract,awaiting a decision,11,synthetic
+title_abstract,outcome include,7,synthetic
+title_abstract,outcome exclude,2,synthetic
+title_abstract,outcome uncertain,0,synthetic
+title_abstract,outcome conflict,1,synthetic
+title_abstract,papers with final decisions,10,synthetic
+title_abstract,papers with provisional decisions,0,synthetic
+title_abstract,current decisions by human decider,0,synthetic
+title_abstract,current decisions by automated decider,2,synthetic
+title_abstract,current decisions by simulated decider,10,synthetic
+title_abstract,papers decided only by automation,2,synthetic
+title_abstract,superseded decisions kept in history,0,synthetic
+title_abstract,decisions flagged for re-review,0,synthetic
+title_abstract,open suggestions (not decisions),19,synthetic
+title_abstract,excluded: criterion_not_met [date_limit] by automated decision,1,synthetic
+title_abstract,excluded: criterion_not_met [publication_type:reviews] by automated decision,1,synthetic
+full_text,records eligible for this stage,7,synthetic
+full_text,with a current decision,2,synthetic
+full_text,awaiting a decision,5,synthetic
+full_text,outcome include,2,synthetic
+full_text,outcome exclude,0,synthetic
+full_text,outcome uncertain,0,synthetic
+full_text,outcome conflict,0,synthetic
+full_text,papers with final decisions,2,synthetic
+full_text,papers with provisional decisions,0,synthetic
+full_text,current decisions by human decider,0,synthetic
+full_text,current decisions by automated decider,0,synthetic
+full_text,current decisions by simulated decider,2,synthetic
+full_text,papers decided only by automation,0,synthetic
+full_text,superseded decisions kept in history,0,synthetic
+full_text,decisions flagged for re-review,0,synthetic
+full_text,open suggestions (not decisions),0,synthetic

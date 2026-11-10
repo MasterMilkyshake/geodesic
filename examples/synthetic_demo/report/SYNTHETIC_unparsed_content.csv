@@ -1,0 +1,4 @@
+workbook_version,sheet,cell_ref,char_start,char_end,reason,text,data_class
+main v2,Release,D9,,,row_without_paper_reference,Orphan note: 3 mg/L seen once.,synthetic
+main v2,Transit,E6,0,3,ambiguous_decimal_comma,"1,5",synthetic
+main v2,Transit,E6,0,6,no_quantity_in_measurement_cell,"1,5 mg",synthetic

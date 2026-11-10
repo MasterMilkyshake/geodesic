@@ -1,0 +1,96 @@
+research_question: 'SYNTHETIC EXAMPLE: how does an inert tracer move among the engineered reservoirs of
+  a test rig (release, transit, retention, discharge)?'
+target_systems:
+- engineered reservoir test rigs
+interventions:
+- inert tracer dosing
+comparators:
+- undosed baseline run
+outcomes:
+- tracer concentration
+- released fraction
+- retained fraction
+- clearance rate
+measurement_types:
+- direct concentration measurement
+- optical proxy signal
+study_designs:
+- bench experiment
+- pilot-rig experiment
+date_limits:
+  from_year: 2015
+  to_year: null
+languages: []
+publication_types:
+  preprints:
+    treatment: flag_for_review
+    note: synthetic example
+    type_terms:
+    - preprint
+  reviews:
+    treatment: exclude
+    note: 'synthetic example: used for background only'
+    type_terms:
+    - review
+  conference_abstracts:
+    treatment: flag_for_review
+    note: synthetic example
+    type_terms:
+    - conference abstract
+    - conference paper
+  other:
+    treatment: flag_for_review
+    note: synthetic example
+    type_terms: []
+inclusion_criteria:
+- id: I1
+  text: Reports an experiment on an engineered reservoir rig.
+  applies_to:
+  - title_abstract
+  - full_text
+  match_terms:
+  - reservoir
+  - tank
+  - conduit
+  - weir
+- id: I2
+  text: Uses an inert tracer.
+  applies_to:
+  - title_abstract
+  - full_text
+  match_terms:
+  - tracer
+  - dye
+- id: I3
+  text: Reports at least one measured quantity for a stage.
+  applies_to:
+  - full_text
+  match_terms: []
+exclusion_criteria:
+- id: E1
+  text: Purely computational study with no rig measurement.
+  applies_to:
+  - title_abstract
+  - full_text
+  match_terms:
+  - simulation only
+  - purely computational
+- id: E2
+  text: Tracer is reactive rather than inert.
+  applies_to:
+  - title_abstract
+  - full_text
+  match_terms:
+  - reactive tracer
+supporting_evidence_role: 'SYNTHETIC EXAMPLE: results from natural (non-engineered) reservoirs are kept
+  as supporting context only and are not compared with rig measurements.'
+automation:
+  title_abstract:
+    authorized: true
+    allowed_rules:
+    - publication_type
+    - date_limit
+  full_text:
+    authorized: false
+    allowed_rules: []
+notes: Synthetic example protocol bundled with GEODESIC for tests and the offline demonstration.

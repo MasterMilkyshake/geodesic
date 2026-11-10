@@ -1,0 +1,83 @@
+finding_id,role,kind,location,excerpt,resolves,resolution_note,data_class
+fnd_6d63308c4ac44f68a5b1,supporting_excerpt,workbook_cell,main v2 · Retention!D5 chars 0-33,Retained fraction ~ 15 % (n = 3).,TRUE,,synthetic
+fnd_6d63308c4ac44f68a5b1,context:system_context,workbook_cell,main v2 · Retention!C5,Bypass line,TRUE,,synthetic
+fnd_afe6f4c68f0b4997b8d6,supporting_excerpt,workbook_cell,main v2 · Retention!D6 chars 0-61,No retention was observed in the bypass line during the test.,TRUE,,synthetic
+fnd_afe6f4c68f0b4997b8d6,context:system_context,workbook_cell,main v2 · Retention!C6,Bypass line,TRUE,,synthetic
+fnd_d0683334f49d472cbf85,supporting_excerpt,workbook_cell,main v2 · Transit!D6 chars 0-38,Flow of at least 30 L/min was required,TRUE,,synthetic
+fnd_d0683334f49d472cbf85,context:system_context,workbook_cell,main v2 · Transit!C6,Mixing loop,TRUE,,synthetic
+fnd_ca1cbffff6814caf9edc,supporting_excerpt,workbook_cell,main v2 · Transit!D6 chars 40-74,"below this, mixing was incomplete.",TRUE,,synthetic
+fnd_ca1cbffff6814caf9edc,context:system_context,workbook_cell,main v2 · Transit!C6,Mixing loop,TRUE,,synthetic
+fnd_6bab96ed8ed64d07a5b4,supporting_excerpt,workbook_cell,main v2 · Transit!E6 chars 0-6,"1,5 mg",TRUE,,synthetic
+fnd_6bab96ed8ed64d07a5b4,context:outcome,workbook_cell,main v2 · Transit!E3,Measured value,TRUE,,synthetic
+fnd_6bab96ed8ed64d07a5b4,context:system_context,workbook_cell,main v2 · Transit!C6,Mixing loop,TRUE,,synthetic
+fnd_7f6d14fdde4c4efb9b91,supporting_excerpt,workbook_cell,main v2 · Release!D5 chars 0-77,Tracer release was approximately 42 % of the loaded mass at 24 h (n = 6 runs),TRUE,,synthetic
+fnd_7f6d14fdde4c4efb9b91,context:interpretation_limits,workbook_cell,main v2 · Release!F5,Single site; not independently verified.,TRUE,,synthetic
+fnd_7f6d14fdde4c4efb9b91,context:system_context,workbook_cell,main v2 · Release!C5,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_eee08070a6d04ca5bc0b,supporting_excerpt,workbook_cell,main v2 · Release!D5 chars 100-142,Release rate stayed > 5 mL/min throughout.,TRUE,,synthetic
+fnd_eee08070a6d04ca5bc0b,context:interpretation_limits,workbook_cell,main v2 · Release!F5,Single site; not independently verified.,TRUE,,synthetic
+fnd_eee08070a6d04ca5bc0b,context:system_context,workbook_cell,main v2 · Release!C5,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_b2147df1e69f4b07b522,supporting_excerpt,workbook_cell,main v2 · Release!E5 chars 0-20,12.5 ± 1.3 mg/L (SD),TRUE,,synthetic
+fnd_b2147df1e69f4b07b522,context:interpretation_limits,workbook_cell,main v2 · Release!F5,Single site; not independently verified.,TRUE,,synthetic
+fnd_b2147df1e69f4b07b522,context:outcome,workbook_cell,main v2 · Release!E3,Measured value,TRUE,,synthetic
+fnd_b2147df1e69f4b07b522,context:system_context,workbook_cell,main v2 · Release!C5,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_4a5ae2970a7541fb9d84,supporting_excerpt,workbook_cell,main v2 · Release!F5 chars 0-11,Single site,TRUE,,synthetic
+fnd_4a5ae2970a7541fb9d84,context:system_context,workbook_cell,main v2 · Release!C5,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_09782ea980424e1385cd,supporting_excerpt,workbook_cell,main v2 · Release!F5 chars 13-40,not independently verified.,TRUE,,synthetic
+fnd_09782ea980424e1385cd,context:system_context,workbook_cell,main v2 · Release!C5,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_4a40862350654341a310,supporting_excerpt,workbook_cell,main v2 · Release!D6 chars 0-34,Release half-time was 4.5 h ± 0.5.,TRUE,,synthetic
+fnd_4a40862350654341a310,context:system_context,workbook_cell,main v2 · Release!C6,"Stirred source tank, 200 L",TRUE,,synthetic
+fnd_ed012c48de684736b69b,supporting_excerpt,workbook_cell,main v2 · Transit!D4 chars 0-78,Tracer release was approximately 42 % of the loaded mass at 24 h (n = 6 runs).,TRUE,,synthetic
+fnd_ed012c48de684736b69b,context:system_context,workbook_cell,main v2 · Transit!C4,Main conduit,TRUE,,synthetic
+fnd_1ede328f69f2441e98e4,supporting_excerpt,pdf_page,document doc_2ba9a830d5284a24b4d2 snapshot 1 · page index 1 chars 10-74,Tracer release reached 62 ± 5 % of the loaded dose after 30 min.,TRUE,,synthetic
+fnd_b8610435ab1f423ab9b3,supporting_excerpt,pdf_page,document doc_2ba9a830d5284a24b4d2 snapshot 1 · page index 1 chars 75-130,The release rate constant was approximately 0.04 1/min.,TRUE,,synthetic
+fnd_2c5c58d7816c4142baf7,supporting_excerpt,workbook_cell,main v2 · Release!D8 chars 0-73,Between 10 and 20 % of the tracer remained bound to the liner after 48 h.,TRUE,,synthetic
+fnd_2c5c58d7816c4142baf7,context:interpretation_limits,workbook_cell,main v2 · Release!F8,Liner batch not reported.,TRUE,,synthetic
+fnd_2c5c58d7816c4142baf7,context:system_context,workbook_cell,main v2 · Release!C8,Lined source tank,TRUE,,synthetic
+fnd_aa19a2fbf0af4c42a534,supporting_excerpt,workbook_cell,main v2 · Release!D8 chars 74-104,Release was complete by day 7.,TRUE,,synthetic
+fnd_aa19a2fbf0af4c42a534,context:interpretation_limits,workbook_cell,main v2 · Release!F8,Liner batch not reported.,TRUE,,synthetic
+fnd_aa19a2fbf0af4c42a534,context:system_context,workbook_cell,main v2 · Release!C8,Lined source tank,TRUE,,synthetic
+fnd_bfa05a57032b479bbd8a,supporting_excerpt,workbook_cell,main v2 · Release!E8 chars 0-11,0.8–1.2 1/h,TRUE,,synthetic
+fnd_bfa05a57032b479bbd8a,context:interpretation_limits,workbook_cell,main v2 · Release!F8,Liner batch not reported.,TRUE,,synthetic
+fnd_bfa05a57032b479bbd8a,context:outcome,workbook_cell,main v2 · Release!E3,Measured value,TRUE,,synthetic
+fnd_bfa05a57032b479bbd8a,context:system_context,workbook_cell,main v2 · Release!C8,Lined source tank,TRUE,,synthetic
+fnd_66e8c126d51b43c6ae19,supporting_excerpt,workbook_cell,main v2 · Release!F8 chars 0-25,Liner batch not reported.,TRUE,,synthetic
+fnd_66e8c126d51b43c6ae19,context:system_context,workbook_cell,main v2 · Release!C8,Lined source tank,TRUE,,synthetic
+fnd_b946f103e1884b659af5,supporting_excerpt,workbook_cell,main v2 · Discharge!D5 chars 0-48,Residual concentration ≤ 0.5 mg/L after 10 days.,TRUE,,synthetic
+fnd_b946f103e1884b659af5,context:system_context,workbook_cell,main v2 · Discharge!C5,Outflow weir,TRUE,,synthetic
+fnd_188acdbf05ab4310bc36,supporting_excerpt,workbook_cell,main v2 · Transit!D5 chars 0-81,"Transit signal through the conduit was 340 a.u. (95% CI 300-380), mean of 4 runs.",TRUE,,synthetic
+fnd_188acdbf05ab4310bc36,context:system_context,workbook_cell,main v2 · Transit!C5,Main conduit,TRUE,,synthetic
+fnd_c02bcd59518a435baae5,supporting_excerpt,workbook_cell,main v2 · Transit!D5 chars 82-102,Peak arrival at 2 h.,TRUE,,synthetic
+fnd_c02bcd59518a435baae5,context:system_context,workbook_cell,main v2 · Transit!C5,Main conduit,TRUE,,synthetic
+fnd_bbd8ec75d485465e80b6,supporting_excerpt,workbook_cell,main v2 · Transit!E5 chars 0-38,2.5-fold higher than baseline at day 7,TRUE,,synthetic
+fnd_bbd8ec75d485465e80b6,context:outcome,workbook_cell,main v2 · Transit!E3,Measured value,TRUE,,synthetic
+fnd_bbd8ec75d485465e80b6,context:system_context,workbook_cell,main v2 · Transit!C5,Main conduit,TRUE,,synthetic
+fnd_de543fad73d24311b743,supporting_excerpt,xml_element,document doc_9f38570b63164e19a5c9 snapshot 1 · element body[1]/sec[2]/p[1] chars 0-59,Mean transit time was 42 ± 3 min at a flow rate of 5 L/min.,TRUE,,synthetic
+fnd_d54bebad233a461cb50b,supporting_excerpt,workbook_cell,main v2 · Retention!D4 chars 0-71,Retention in the holding reservoir was 65 % of inflow per litre at 12 h,TRUE,,synthetic
+fnd_d54bebad233a461cb50b,context:interpretation_limits,workbook_cell,main v2 · Retention!F4,Detection limit not stated; units unclear.,TRUE,,synthetic
+fnd_d54bebad233a461cb50b,context:system_context,workbook_cell,main v2 · Retention!C4,Holding reservoir A,TRUE,,synthetic
+fnd_14afe073c03e48b1bc1b,supporting_excerpt,workbook_cell,main v2 · Retention!D4 chars 73-113,30 % of counted particles were retained.,TRUE,,synthetic
+fnd_14afe073c03e48b1bc1b,context:interpretation_limits,workbook_cell,main v2 · Retention!F4,Detection limit not stated; units unclear.,TRUE,,synthetic
+fnd_14afe073c03e48b1bc1b,context:system_context,workbook_cell,main v2 · Retention!C4,Holding reservoir A,TRUE,,synthetic
+fnd_68909e8b145b4c35ac0b,supporting_excerpt,workbook_cell,main v2 · Retention!E4 chars 0-12,< 0.05 mg/kg,TRUE,,synthetic
+fnd_68909e8b145b4c35ac0b,context:interpretation_limits,workbook_cell,main v2 · Retention!F4,Detection limit not stated; units unclear.,TRUE,,synthetic
+fnd_68909e8b145b4c35ac0b,context:outcome,workbook_cell,main v2 · Retention!E3,Measured value,TRUE,,synthetic
+fnd_68909e8b145b4c35ac0b,context:system_context,workbook_cell,main v2 · Retention!C4,Holding reservoir A,TRUE,,synthetic
+fnd_37f2257f2ec244d8b1db,supporting_excerpt,workbook_cell,main v2 · Retention!F4 chars 0-26,Detection limit not stated,TRUE,,synthetic
+fnd_37f2257f2ec244d8b1db,context:system_context,workbook_cell,main v2 · Retention!C4,Holding reservoir A,TRUE,,synthetic
+fnd_a6cb91bb88474bf6bfa1,supporting_excerpt,workbook_cell,main v2 · Retention!F4 chars 28-42,units unclear.,TRUE,,synthetic
+fnd_a6cb91bb88474bf6bfa1,context:system_context,workbook_cell,main v2 · Retention!C4,Holding reservoir A,TRUE,,synthetic
+fnd_10d2c0e89bba49888c92,supporting_excerpt,workbook_cell,main v2 · Discharge!D4 chars 0-49,Discharge cleared 90 % of the tracer within 72 h.,TRUE,,synthetic
+fnd_10d2c0e89bba49888c92,context:system_context,workbook_cell,main v2 · Discharge!C4,Outflow weir,TRUE,,synthetic
+fnd_ade47ca40d76472884ee,supporting_excerpt,workbook_cell,main v2 · Discharge!D4 chars 50-104,"Clearance rate 0.12 ± 0.02 1/h (SE), n = 5 reservoirs.",TRUE,,synthetic
+fnd_ade47ca40d76472884ee,context:system_context,workbook_cell,main v2 · Discharge!C4,Outflow weir,TRUE,,synthetic
+fnd_59786c965c9548d7a046,supporting_excerpt,workbook_cell,main v2 · Discharge!E4 chars 0-7,21 mg/L,TRUE,,synthetic
+fnd_59786c965c9548d7a046,context:outcome,workbook_cell,main v2 · Discharge!E3,Measured value,TRUE,,synthetic
+fnd_59786c965c9548d7a046,context:system_context,workbook_cell,main v2 · Discharge!C4,Outflow weir,TRUE,,synthetic
+fnd_3dd244db276e4cfbae1a,supporting_excerpt,workbook_cell,main v2 · Release!D4 chars 0-72,Release from the secondary tank reached 55 % of the loaded mass at 24 h.,TRUE,,synthetic
+fnd_3dd244db276e4cfbae1a,context:system_context,workbook_cell,main v2 · Release!C4,Secondary tank,TRUE,,synthetic
+fnd_2288e11f637f43438303,supporting_excerpt,workbook_cell,main v2 · Release!D7 chars 0-49,Release appeared faster at higher stirring speed.,TRUE,,synthetic
+fnd_2288e11f637f43438303,context:system_context,workbook_cell,main v2 · Release!C7,Pilot tank,TRUE,,synthetic
+fnd_9731386ded4e423b8dcc,supporting_excerpt,workbook_cell,main v2 · Discharge!D6 chars 0-35,Discharge data were read from graph,TRUE,,synthetic
+fnd_9731386ded4e423b8dcc,context:system_context,workbook_cell,main v2 · Discharge!C6,Outflow weir,TRUE,,synthetic
+fnd_dde2a045fdc3419fada0,supporting_excerpt,workbook_cell,main v2 · Discharge!D6 chars 37-71,values approximately 7 to 9 L/min.,TRUE,,synthetic
+fnd_dde2a045fdc3419fada0,context:system_context,workbook_cell,main v2 · Discharge!C6,Outflow weir,TRUE,,synthetic

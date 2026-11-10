@@ -1,0 +1,93 @@
+# GEODESIC research protocol: EMPTY TEMPLATE
+#
+# This file is yours to write. GEODESIC does not draft criteria and does not
+# infer them from a workbook. Until you load and confirm a completed protocol,
+# the project runs under an explicitly PROVISIONAL protocol: imports,
+# exploratory searches and draft screening suggestions work, but eligibility
+# decisions cannot be finalised and automated decisions stay disabled.
+#
+# Workflow:
+#   1. Fill in this file.
+#   2. geodesic protocol load protocol.yaml --project <dir> --reviewer "<your name>"   (stores a new provisional version)
+#   3. geodesic protocol confirm --project <dir> --reviewer "<your name>"
+# Any later edit creates a new version; earlier screening decisions affected by
+# the change are flagged for re-review, never replaced automatically.
+
+research_question: ""
+
+# Target systems or populations within the primary scope.
+target_systems: []
+
+# Relevant interventions, materials or exposures.
+interventions: []
+
+# Comparators, where applicable.
+comparators: []
+
+# Outcomes and measurement types of interest.
+outcomes: []
+measurement_types: []
+
+# Study designs in scope.
+study_designs: []
+
+# Publication date limits (inclusive years). Leave null for no limit.
+date_limits:
+  from_year: null
+  to_year: null
+
+# Language limits as codes used by your sources (e.g. "eng"). Empty list = no limit requested.
+languages: []
+
+# Treatment of publication types. treatment: include | exclude | flag_for_review | undecided
+# type_terms: source-supplied publication-type terms that identify the type (matched case-insensitively).
+#             Terms match whole words or phrases; a trailing * matches any word ending (review* -> reviews).
+publication_types:
+  preprints:
+    treatment: undecided
+    note: ""
+    type_terms: []
+  reviews:
+    treatment: undecided
+    note: ""
+    type_terms: []
+  conference_abstracts:
+    treatment: undecided
+    note: ""
+    type_terms: []
+  other:
+    treatment: undecided
+    note: ""
+    type_terms: []
+
+# Eligibility criteria. Give each a short unique id (I1, I2, ... / E1, E2, ...).
+#   applies_to:  which screening stages use the criterion (title_abstract, full_text)
+#   match_terms: OPTIONAL words/phrases of your choosing that drive draft *suggestions* only.
+#                A missing term in an abstract yields "insufficient information", never an exclusion.
+inclusion_criteria: []
+#  - id: I1
+#    text: ""
+#    applies_to: [title_abstract, full_text]
+#    match_terms: []
+
+exclusion_criteria: []
+#  - id: E1
+#    text: ""
+#    applies_to: [title_abstract, full_text]
+#    match_terms: []
+
+# Role of supporting evidence from systems outside the primary scope
+# (for example: "background only; never entered into quantitative comparison").
+supporting_evidence_role: ""
+
+# Automated decisions are OFF unless you authorise them here in a CONFIRMED protocol.
+# allowed_rules may contain: publication_type, date_limit, language
+automation:
+  title_abstract:
+    authorized: false
+    allowed_rules: []
+  full_text:
+    authorized: false
+    allowed_rules: []
+
+notes: ""
