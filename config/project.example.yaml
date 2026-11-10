@@ -40,7 +40,7 @@ reviewers: []
 # Deterministic narrative parser. All lists are editable.
 parser:
   extra_qualifier_phrases: []   # additional hedging/qualifier phrases to flag, as written in your sources
-  extra_units: {}               # unit symbol -> dimension name; recognised, never converted
+  extra_units: {}               # unit symbol -> dimension name; accepted by validation for units a reviewer enters (never converted). The import parser uses its fixed unit table only.
   segment_on_semicolon: true
   repeat_similarity_threshold: 0.92
   reimport_similarity_threshold: 0.6

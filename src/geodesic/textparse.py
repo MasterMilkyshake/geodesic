@@ -71,6 +71,8 @@ _COUNT_NOUN_RE = re.compile(
     r"(?<![\w.,])(?P<n>\d+)\s+(?P<rep>(?:independent\s+|technical\s+|repeat\s+|replicate\s+)?"
     r"(?:replicates?|runs?|samples?|experiments?|batches|trials|repeats|measurements|observations))\b")
 _CAP_WORD_BEFORE_RE = re.compile(r"(?<![A-Za-z])[A-Z][a-z]{2,}\s$")
+#: A name a hyphen joins a number to ("TX", "Dye", "LOT-1"): starts with a letter, no spaces.
+_HYPHEN_NAME_BEFORE_RE = re.compile(r"(?<![A-Za-z0-9\-‑])[A-Za-z][A-Za-z0-9]*(?:[-‑][A-Za-z0-9]+)*$")
 _P_RE = re.compile(rf"\b[pP]\s?(?:[<>=≤≥]|<=|>=)\s?{_NUM_CORE}")
 _CI_RE = re.compile(
     rf"(?P<level>\d{{2}}(?:\.\d+)?)\s?%\s?(?:CI|C\.I\.|confidence interval)[:,]?\s*\[?(?P<lo>[-−]?{_NUM_CORE})"
@@ -408,6 +410,9 @@ def parse_text(text: str, qualifier_phrases: Iterable[str] = DEFAULT_QUALIFIER_P
         if i in consumed or any(us <= m.start() < ue for us, ue in unit_spans):
             continue
         s, e = m.start(), m.end()
+        if s >= 2 and text[s - 1] in "-‑" and _HYPHEN_NAME_BEFORE_RE.search(text[max(0, s - 40):s - 1]):
+            _skip(s, e, "number_in_hyphenated_name")    # "TX-200", "Dye-5", "LOT-1-005"
+            continue
         a_literal = text[s:e]
         # sign directly attached to the number
         if s > 0 and text[s - 1] in "-−+" and (s == 1 or text[s - 2] in " \t\n(=:[<>≤≥~≈±,"):

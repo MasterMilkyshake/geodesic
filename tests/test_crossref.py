@@ -213,3 +213,27 @@ def test_parse_work_keeps_values_as_supplied():
                                 "date": "2022-01-02"}]
     empty = crossref.parse_work({})
     assert empty["title"] is None and empty["year"] is None and empty["publication_status"] == "unknown"
+
+
+# ------------------------------------------------------------------ short author-year citations
+_WORK = {"title": "Tracer release from a stirred source tank", "authors": ["Arden, Q", "Belmont, T"], "year": 2021}
+
+
+def test_short_citation_agrees_by_first_author_and_year():
+    assert crossref.author_year_agreement("[Source tank · dye] Arden 2021 · Fig. 2", _WORK)
+    assert crossref.author_year_agreement("Arden 2022 · Fig. 2", _WORK)          # online/print year differ by one
+    assert not crossref.author_year_agreement("Arden 2019 · Fig. 2", _WORK)
+    assert not crossref.author_year_agreement("Belmont 2021 · Fig. 2", _WORK)    # not the first author
+    assert not crossref.author_year_agreement("Arden · Fig. 2", _WORK)          # no year to compare
+    assert not crossref.author_year_agreement("Arden 2021", {**_WORK, "authors": []})
+
+
+def test_identity_agreement_uses_author_and_year_only_for_untitled_short_citations():
+    short = {"title": None, "citation_text": "[Source tank · dye] Arden 2021 · Fig. 2\nhttps://doi.org/10.5555/x"}
+    assert crossref.identity_agreement(short, _WORK, 0.35) == (None, "first_author_and_year")
+    wrong_author = {**short, "citation_text": "Corwin 2021 · Fig. 2"}
+    sim, basis = crossref.identity_agreement(wrong_author, _WORK, 0.35)
+    assert sim == 0.0 and basis == "title_words_in_citation"                     # still a possible misassignment
+    titled = {"title": "An unrelated title about pumps", "citation_text": "Arden 2021"}
+    sim, basis = crossref.identity_agreement(titled, _WORK, 0.35)
+    assert basis == "title_words" and sim < 0.35                                 # a stored title is always compared

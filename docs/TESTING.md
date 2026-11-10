@@ -26,9 +26,9 @@ The standard run deselects the `network` and `scale` tests (set in
 
 ## Standard tests
 
-Observed 2026-11-09 (local), Python 3.12.16, macOS arm64:
+Observed 2026-11-10 (local), Python 3.12.16, macOS arm64:
 
-    333 passed, 8 deselected in 51.19s
+    350 passed, 8 deselected in 44.11s
 
 No failures, no skips. The 8 deselected tests are the 5 network tests and the
 3 scale tests.
@@ -37,6 +37,7 @@ No failures, no skips. The 8 deselected tests are the 5 network tests and the
 |---|---|
 | `test_parsing_and_grounding.py` | Narrative and quantity parser; source spans; refusal of literals that are absent or cut a longer token |
 | `test_workbook_import.py`, `test_reimport.py` | Profile, mapping confirmation, byte-identical source copy and hash, merged and blank cells, reconciliation, re-import outcomes, reviewer edits across versions |
+| `test_workbook_sections.py` | Several tables stacked on one sheet, column patterns with exact-character locations, mapping validation for both, numbers inside hyphenated names (generated workbook; invented content) |
 | `test_integrity.py` | Refused deletes, append-only history, immutable identity and provenance columns, audit-chain tamper detection, migration backup and rollback, stages from configuration, reviewer identity, credential sources |
 | `test_redaction.py` | A contact address and a token are sent to the provider (stub transport) and stored nowhere in the project directory or its exports; fixture mode reads neither |
 | `test_protocol.py`, `test_screening.py` | Protocol versions and confirmation, suggestions, decision rules, conflicts, adjudication, automation, re-review, flow summary |

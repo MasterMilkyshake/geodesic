@@ -21,6 +21,7 @@ does not verify anything a workbook says about the paper's content.
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import time
 import urllib.parse
@@ -118,6 +119,41 @@ def title_agreement(paper: sqlite3.Row | dict, registry_title: str | None) -> fl
     return round(sum(w in cited for w in words) / len(words), 4)
 
 
+_YEAR_IN_TEXT_RE = re.compile(r"(?<!\d)(1[89]\d\d|20\d\d|21\d\d)(?!\d)")
+
+
+def author_year_agreement(citation: str | None, work: dict[str, Any]) -> bool:
+    """Whether a short citation ("Arden 2021 · Fig. 2") names the registry record's first author and year.
+
+    The first author's family name must occur as words of the citation, and a
+    year in the citation must be within one year of the registry year (online
+    and print years often differ by one).
+    """
+    if not citation or not work.get("authors") or not work.get("year"):
+        return False
+    family = normalize_text_key(str(work["authors"][0]).split(",")[0]).split()
+    cited = set(normalize_text_key(citation).split())
+    if not family or not all(w in cited for w in family):
+        return False
+    return any(abs(int(y) - int(work["year"])) <= 1 for y in _YEAR_IN_TEXT_RE.findall(citation))
+
+
+def identity_agreement(paper: sqlite3.Row | dict, work: dict[str, Any], threshold: float
+                       ) -> tuple[float | None, str]:
+    """Agreement between a paper record and a registry record, and the basis it was judged on.
+
+    A paper known only by a short author-year citation shares no title words
+    with the registry title; for such a paper a low title score is replaced by
+    the first-author-and-year check (``None`` score, basis
+    ``first_author_and_year``) when that check agrees.
+    """
+    sim = title_agreement(paper, work["title"])
+    if (not paper["title"] and sim is not None and sim < threshold
+            and author_year_agreement(paper["citation_text"], work)):
+        return None, "first_author_and_year"
+    return sim, "title_words" if paper["title"] or sim is None else "title_words_in_citation"
+
+
 def _store_raw(project: Project, content: bytes) -> str:
     sha = sha256_bytes(content)
     directory = project.raw_dir / PROVIDER
@@ -183,9 +219,9 @@ def validate_paper_doi(project: Project, paper_id: str, actor: Actor, client: Ht
     except (KeyError, TypeError, ValueError, UnicodeDecodeError) as exc:
         raise RetrievalError(f"Crossref answered for {doi} but not in the documented response shape ({exc}).") from exc
     sha = _store_raw(project, resp.content)
-    sim = title_agreement(row, work["title"])
-    mismatch = (work["doi"] is not None and work["doi"] != doi) or \
-        (sim is not None and sim < project.config.dedup.identifier_title_conflict_below)
+    threshold = project.config.dedup.identifier_title_conflict_below
+    sim, basis = identity_agreement(row, work, threshold)
+    mismatch = (work["doi"] is not None and work["doi"] != doi) or (sim is not None and sim < threshold)
     with transaction(conn):
         if mismatch:
             papers.record_conflict(conn, paper_id, "title", row["title"], work["title"], SOURCE, now)
@@ -207,8 +243,9 @@ def validate_paper_doi(project: Project, paper_id: str, actor: Actor, client: Ht
                      " identity_status = 'unverified'", (now, paper_id))
         _candidate(conn, paper_id, doi, "exact_identifier", work, work["doi"], sim, "auto_attached", sha, actor)
         audit.record(conn, actor, "paper.identifier_lookup", "paper", paper_id,
-                     {"provider": PROVIDER, "doi": doi, "outcome": "validated", "filled": merged["filled"],
-                      "conflicts": merged["conflicts"], "checked_on": today, "response_sha256": sha})
+                     {"provider": PROVIDER, "doi": doi, "outcome": "validated", "agreement_basis": basis,
+                      "filled": merged["filled"], "conflicts": merged["conflicts"], "checked_on": today,
+                      "response_sha256": sha})
         results = []
         for n in work["notices"]:
             result = _NOTICE_TYPES.get(n["type"], "other_notice")

@@ -132,7 +132,12 @@ Crossref is not used as a search source.
 - **`validate`** looks up each unvalidated DOI (`GET /works/{doi}`). A 200
   marks the identifier `validated`, fills empty metadata fields and records
   differing values as conflicts. A clearly different registry title is
-  flagged as a possible misassigned identifier and nothing is filled. A 404
+  flagged as a possible misassigned identifier and nothing is filled. A
+  paper known only by a short author-year citation ("Arden 2021 · Fig. 2")
+  shares no title words with the registry; for such a paper the check is
+  instead whether the citation names the registry's first author and a year
+  within one of the registry year, and the basis used is recorded with the
+  lookup (`agreement_basis`). A 404
   marks the identifier `not_found` in Crossref on that date.
 - The work record's `updated-by` field is stored as a dated **integrity
   check**: the notices listed, or "none found in Crossref on <date>". That is

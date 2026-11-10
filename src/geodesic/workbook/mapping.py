@@ -11,8 +11,9 @@ set it to ``confirmed: true``.
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 import yaml
 from openpyxl.utils import column_index_from_string
@@ -37,10 +38,47 @@ CONTEXT_ROLES = ("system_context", "experimental_context", "intervention", "comp
 SINGLE_ROLES = ("paper_reference", "doi", "pmid", "url", "title", "authors", "year", "journal", "stage",
                 *CONTEXT_ROLES, "timepoint")
 SUMMARY_MEASURES = ("evidence_rows", "distinct_papers")
+#: Fields a column pattern may fill. Each becomes row context for the findings of the row.
+PATTERN_ROLES = (*CONTEXT_ROLES, "timepoint")
 
 
 class _Model(BaseModel):
     model_config = ConfigDict(extra="forbid")
+
+
+class PatternField(_Model):
+    """A field read from part of a cell's text by a regular expression.
+
+    The pattern is applied with ``re.MULTILINE`` (``^`` and ``$`` match at line
+    breaks) and must define a group named ``value``. The first match in the
+    cell gives the field, with the exact character span of the value. A
+    content segment that lies wholly inside a match is context and is not
+    parsed into findings.
+    """
+
+    pattern: str
+    role: str
+
+    @field_validator("role")
+    @classmethod
+    def _role(cls, v: str) -> str:
+        if v not in PATTERN_ROLES:
+            raise ValueError(f"pattern role {v!r} is not allowed; allowed: {', '.join(PATTERN_ROLES)}")
+        return v
+
+    @field_validator("pattern")
+    @classmethod
+    def _pattern(cls, v: str) -> str:
+        try:
+            rx = re.compile(v, re.MULTILINE)
+        except re.error as exc:
+            raise ValueError(f"pattern {v!r} is not a valid regular expression: {exc}") from exc
+        if "value" not in rx.groupindex:
+            raise ValueError(f"pattern {v!r} has no group named 'value' (write it as (?P<value>...))")
+        return v
+
+    def compiled(self) -> re.Pattern[str]:
+        return re.compile(self.pattern, re.MULTILINE)
 
 
 class ColumnMapping(_Model):
@@ -50,6 +88,7 @@ class ColumnMapping(_Model):
     confirmed: bool = False
     inferred_by: str | None = None   # why the profiler proposed this role
     note: str | None = None
+    patterns: list[PatternField] = Field(default_factory=list)   # fields read from part of the cell text
 
     @field_validator("column")
     @classmethod
@@ -135,8 +174,25 @@ class WorkbookMapping(_Model):
                 return s
         return None
 
+    def sections(self, name: str) -> list[SheetMapping]:
+        """Every entry for sheet ``name`` (a sheet may hold several evidence sections), top to bottom."""
+        return sorted((s for s in self.sheets if s.sheet == name), key=lambda s: s.data_start_row or 0)
+
+    def plain(self) -> dict[str, Any]:
+        """The mapping as plain data, without empty ``patterns`` lists.
+
+        Leaving the empty lists out keeps the content hash of a mapping written
+        before column patterns existed unchanged.
+        """
+        data = self.model_dump(mode="json")
+        for sheet in data["sheets"]:
+            for col in sheet["columns"]:
+                if not col.get("patterns"):
+                    col.pop("patterns", None)
+        return data
+
     def content_sha256(self) -> str:
-        return sha256_text(canonical_json(self.model_dump(mode="json")))
+        return sha256_text(canonical_json(self.plain()))
 
 
 def load_mapping(path: Path | str) -> WorkbookMapping:
@@ -170,6 +226,14 @@ _HEADER = """\
 #   measurements        cells that each hold one measurement (value and unit)
 #   limitations         caveats and limits on interpretation
 #   unmapped            kept cell-by-cell and as an unknown field of the row; not interpreted
+# Column patterns (optional): fields read from part of a cell's text, e.g.
+#     patterns:
+#       - pattern: '^Condition:\\s*(?P<value>.+)$'    # regular expression, multiline, group 'value'
+#         role: experimental_context                  # {pattern_roles}
+#   A content line wholly inside a match is context, not a finding.
+# Sections: a sheet holding several stacked tables may be listed once per table,
+#   each entry an evidence section with its own header_row, data rows (data_end_row
+#   required on all but the lowest), columns and stage. Row ranges may not overlap.
 # Stage modes:   fixed (whole sheet = stage_keys) | column (a `stage` column names it) | none
 # summary_counts: cells holding counts that the importer reconciles against what it imported
 #   measures: evidence_rows | distinct_papers ; stage_key: a project stage key, or null for the whole workbook
@@ -183,13 +247,31 @@ _HEADER = """\
 
 
 def dump_mapping(mapping: WorkbookMapping) -> str:
-    body = yaml.safe_dump(mapping.model_dump(mode="json"), sort_keys=False, allow_unicode=True, width=110)
-    return _HEADER.format(roles=" | ".join(COLUMN_ROLES)) + "\n" + body
+    body = yaml.safe_dump(mapping.plain(), sort_keys=False, allow_unicode=True, width=110)
+    return _HEADER.format(roles=" | ".join(COLUMN_ROLES), pattern_roles=" | ".join(PATTERN_ROLES)) + "\n" + body
 
 
 def write_mapping(mapping: WorkbookMapping, path: Path | str) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(dump_mapping(mapping), encoding="utf-8")
+
+
+def _section_problems(name: str, sections: list[SheetMapping]) -> list[str]:
+    """Problems with a sheet listed more than once: only as evidence sections with separate row ranges."""
+    if any(s.role != "evidence" for s in sections):
+        return [f"sheet {name!r} is listed more than once; a sheet may be listed more than once only as "
+                "evidence sections with separate row ranges"]
+    if any(s.header_row is None or s.data_start_row is None for s in sections):
+        return []     # reported for each section on its own
+    problems: list[str] = []
+    for upper, lower in zip(sections, sections[1:]):
+        if upper.data_end_row is None:
+            problems.append(f"sheet {name!r}: the section from row {upper.data_start_row} needs data_end_row, "
+                            f"because another section starts below it (row {lower.data_start_row})")
+        elif upper.data_end_row >= min(lower.header_row, lower.data_start_row):
+            problems.append(f"sheet {name!r}: the section with rows {upper.data_start_row}-{upper.data_end_row} "
+                            f"overlaps the section with header row {lower.header_row}")
+    return problems
 
 
 def validate_mapping(mapping: WorkbookMapping, sheet_names: list[str], stage_keys: list[str]) -> None:
@@ -205,7 +287,7 @@ def validate_mapping(mapping: WorkbookMapping, sheet_names: list[str], stage_key
     mapped = [s.sheet for s in mapping.sheets]
     for name in sorted(set(mapped)):
         if mapped.count(name) > 1:
-            problems.append(f"sheet {name!r} is listed more than once")
+            problems.extend(_section_problems(name, mapping.sections(name)))
     for name in sheet_names:
         if name not in mapped:
             problems.append(f"workbook sheet {name!r} is not listed in the mapping (list it with role: ignore "
@@ -217,6 +299,8 @@ def validate_mapping(mapping: WorkbookMapping, sheet_names: list[str], stage_key
         problems.append("no sheet has role 'evidence'")
     for sm in mapping.sheets:
         where = f"sheet {sm.sheet!r}"
+        if mapped.count(sm.sheet) > 1:
+            where += f" (section from row {sm.data_start_row})"
         if not sm.confirmed:
             unconfirmed.append(f"{where}: role '{sm.role}' (and its header/data rows)")
         if sm.role != "evidence":
@@ -235,8 +319,16 @@ def validate_mapping(mapping: WorkbookMapping, sheet_names: list[str], stage_key
         if not sm.columns_with(*PAPER_IDENTITY_ROLES):
             problems.append(f"{where}: no column identifies the paper (one of: {', '.join(PAPER_IDENTITY_ROLES)})")
         for cm in sm.columns:
-            if cm.role != "unmapped" and not cm.confirmed:
-                unconfirmed.append(f"{where}: column {cm.column} ({cm.header or 'no header'}) as '{cm.role}'")
+            if (cm.role != "unmapped" or cm.patterns) and not cm.confirmed:
+                unconfirmed.append(f"{where}: column {cm.column} ({cm.header or 'no header'}) as '{cm.role}'"
+                                   + (f" with {len(cm.patterns)} pattern(s)" if cm.patterns else ""))
+        column_roles = {c.role for c in sm.columns}
+        pattern_roles = [pf.role for c in sm.columns for pf in c.patterns]
+        for role in sorted(set(pattern_roles)):
+            if pattern_roles.count(role) > 1:
+                problems.append(f"{where}: more than one pattern fills '{role}'")
+            if role in column_roles:
+                problems.append(f"{where}: '{role}' is both a column role and a pattern role")
         st = sm.stage
         if not st.confirmed:
             unconfirmed.append(f"{where}: stage assignment (mode '{st.mode}')")

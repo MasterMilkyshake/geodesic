@@ -65,6 +65,16 @@ that date.
   same `workbook_key`, is refused.
 - The narrative parser is deterministic and conservative. Wording it does
   not recognise is kept as qualitative or unparsed content for a reviewer.
+- A number joined by a hyphen to a preceding name ("TX-200", "Dye-5") is
+  recorded as unparsed content (`number_in_hyphenated_name`), never as a
+  value. The same applies to a genuine measurement written that way, such
+  as a timepoint "day-3"; it stays visible as unparsed text for a reviewer.
+- A column pattern takes the first match in a cell, and one pattern may fill
+  a given field per section. A field that appears several times in one cell
+  keeps only its first occurrence as row context.
+- Sections of one sheet are mapped separately and cannot overlap. A change
+  in row positions (rows inserted above a section) needs the mapping's row
+  numbers edited by hand; they are not re-detected.
 
 ### Documents and extraction
 

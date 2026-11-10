@@ -76,6 +76,44 @@ Several columns may share a content role (`narrative_findings`,
 `measurements`, `limitations`, `unmapped`). Every other role may be given to
 one column per sheet.
 
+**Column patterns** read a field from part of a cell's text. Each entry is a
+regular expression with a group named `value`, applied with multiline
+matching (`^` and `$` match at line breaks), and the field it fills:
+`system_context`, `experimental_context`, `intervention`, `comparator`,
+`outcome`, `measurement_method` or `timepoint`. The first match in the cell
+gives the field for every finding of the row, with a location pointing at the
+exact characters. A content segment that lies wholly inside a match is
+context and is not parsed into findings.
+
+    columns:
+      - column: A
+        role: paper_reference
+        confirmed: true
+        patterns:
+          - pattern: '^\[(?P<value>[^\]]+)\]'             # "[Holding tank · dye] Alpha 2021 ..."
+            role: system_context
+      - column: B
+        role: measurements
+        confirmed: true
+        patterns:
+          - pattern: '\A(?P<value>[^:\n]+):'              # "Dye concentration: 12.5 mg/L"
+            role: outcome
+          - pattern: '^Time / context:\s*(?P<value>.+)$'  # a labelled line
+            role: timepoint
+
+A field may come from one pattern or one column per section, not both. A
+pattern timepoint that is not a single time ("steady state") is kept as
+written and flagged `timepoint_pattern_not_parsed`. A column carrying
+patterns must be confirmed even when its role is `unmapped`.
+
+**Sections**: a sheet that holds several tables stacked one above another is
+listed once per table. Each entry is an evidence section with its own
+`header_row`, data rows, columns, patterns and stage. Every section except
+the lowest needs `data_end_row`, and row ranges may not overlap, so a divider
+row between two tables can be made the header row of the lower one and is
+then never read as data. Evidence row counts are reported per sheet, summed
+over its sections.
+
 **Stage modes**: `fixed` assigns every row of the sheet to `stage_keys`.
 `column` reads the stage from the column with role `stage`, translating the
 workbook's own terms through `value_map`. `none` assigns no stage. Stage keys
@@ -157,7 +195,11 @@ It does not:
 - guess the reference of a percentage or the baseline of a fold change,
 - decide whether an observation is a direct measurement or a proxy,
 - guess a number with an ambiguous decimal comma. The segment is recorded as
-  unparsed content (`ambiguous_decimal_comma`).
+  unparsed content (`ambiguous_decimal_comma`),
+- read a number that a hyphen joins to a name ("TX-200", "Dye-5",
+  "LOT-1-005") as a quantity. It is recorded as unparsed content
+  (`number_in_hyphenated_name`). Ranges and signed numbers ("10-20", "-5")
+  are unaffected because no name precedes the hyphen.
 
 A measurement cell without a recognisable quantity is recorded as unparsed
 content (`no_quantity_in_measurement_cell`). A stage term absent from

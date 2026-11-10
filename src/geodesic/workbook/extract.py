@@ -128,6 +128,9 @@ class _SheetExtractor:
                      "timepoint", *CONTEXT_ROLES)}
         self.mapped_cols = {c.index for c in sm.columns if c.role != "unmapped"}
         self.value_map = {normalize_text_key(k): v for k, v in sm.stage.value_map.items()}
+        self.pattern_cols = [(c.index, pf.role, pf.compiled()) for c in sm.columns for pf in c.patterns]
+        #: cell_ref -> character spans of the current row's pattern matches (context, not findings)
+        self._consumed: dict[str, list[tuple[int, int]]] = {}
 
     def eff(self, row: int, role: str) -> CellRecord | None:
         cm = self.col.get(role)
@@ -272,22 +275,47 @@ class _SheetExtractor:
         cell = self.eff(row, "timepoint")
         if cell is not None and _text(cell):
             raw = cell.raw_text
-            p = parse_text(raw, self.phrases)
-            times = p.timepoints + [q for q in p.quantities if q.is_time]
             locs.append(cell_loc(cell, "context:timepoint"))
-            if len(times) == 1 and times[0].statement_type in ("exact", "approximate"):
-                t = times[0]
-                s, e = _time_span(t)
-                content.update(timepoint_literal=raw[s:e], timepoint_value=t.value_num, time_unit=t.unit_literal)
-                spans["timepoint_literal"] = {"role": "context:timepoint", "start": s, "end": e}
+            self._timepoint_context(raw, len(raw) - len(raw.lstrip()), len(raw.rstrip()), content, spans, flags,
+                                    status, "timepoint_column_not_parsed")
+        self._consumed = {}
+        for col_idx, role, rx in self.pattern_cols:
+            cell = self.sd.effective(row, col_idx, self.fill)
+            raw = cell.raw_text if cell is not None else None
+            m = rx.search(raw) if raw else None
+            if m is None or m.group("value") is None:
+                continue
+            s, e = m.span("value")
+            while s < e and raw[s].isspace():
+                s += 1
+            while e > s and raw[e - 1].isspace():
+                e -= 1
+            if s >= e:
+                continue
+            self._consumed.setdefault(cell.cell_ref, []).append(m.span())
+            locs.append(cell_loc(cell, f"context:{role}", s, e))
+            if role == "timepoint":
+                self._timepoint_context(raw, s, e, content, spans, flags, status, "timepoint_pattern_not_parsed")
             else:
-                s = len(raw) - len(raw.lstrip())
-                e = len(raw.rstrip())
-                content["timepoint_literal"] = raw[s:e]
-                spans["timepoint_literal"] = {"role": "context:timepoint", "start": s, "end": e}
-                status["timepoint"] = "could_not_be_parsed"
-                flags.append("timepoint_column_not_parsed")
+                content[role] = raw[s:e]
         return content, spans, locs, flags, status
+
+    def _timepoint_context(self, raw: str, start: int, end: int, content: dict[str, Any], spans: dict[str, Any],
+                           flags: list[str], status: dict[str, str], unparsed_flag: str) -> None:
+        """Row timepoint from ``raw[start:end]``; spans address the whole cell text."""
+        text = raw[start:end]
+        p = parse_text(text, self.phrases)
+        times = p.timepoints + [q for q in p.quantities if q.is_time]
+        if len(times) == 1 and times[0].statement_type in ("exact", "approximate"):
+            t = times[0]
+            s, e = _time_span(t)
+            content.update(timepoint_literal=text[s:e], timepoint_value=t.value_num, time_unit=t.unit_literal)
+            spans["timepoint_literal"] = {"role": "context:timepoint", "start": start + s, "end": start + e}
+        else:
+            content["timepoint_literal"] = text
+            spans["timepoint_literal"] = {"role": "context:timepoint", "start": start, "end": end}
+            status["timepoint"] = "could_not_be_parsed"
+            flags.append(unparsed_flag)
 
     def _measurement(self, q: Quantity, p: TextParse, off: int, base: dict[str, Any],
                      seg_text: str) -> tuple[dict, dict, list[str], dict]:
@@ -314,7 +342,10 @@ class _SheetExtractor:
             base["interpretation_limits"] = limits_text
             extra_locs.append(limits_loc)
         prev: list[DraftFinding] = []
+        consumed = self._consumed.get(cell.cell_ref, [])
         for seg in split_segments(text, self.on_semicolon):
+            if any(ms <= seg.start and seg.end <= me for ms, me in consumed):
+                continue      # read by a column pattern as row context
             p = parse_text(seg.text, self.phrases)
             seg_norm = normalize_text_key(seg.text)
             primary = cell_loc(cell, F.PRIMARY_ROLE, seg.start, seg.end)
@@ -472,7 +503,7 @@ class _SheetExtractor:
             lim_loc = cell_loc(lim_cell, "context:interpretation_limits") if lim_cell else None
             for c, role in cells:
                 self.content_cell(c, role, row, paper, keys, ctx, lim_key, lim_text, lim_loc)
-        self.out.evidence_rows_by_sheet[sd.name] = n_rows
+        self.out.evidence_rows_by_sheet[sd.name] = self.out.evidence_rows_by_sheet.get(sd.name, 0) + n_rows
 
     def index_rows(self) -> None:
         self._own: dict[int, list[CellRecord]] = {}
